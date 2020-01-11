@@ -23,10 +23,10 @@ ruby 2.6.3
 ## デプロイ想定環境
 
 AWS
-　EC2
-　SES
-　RDS
-　ALB
+- EC2  
+- SES  
+- RDS  
+- ALB  
 
 ---
 ## 機能一覧
