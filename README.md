@@ -22,14 +22,19 @@ ruby 2.6.3
 ---
 ## デプロイ想定環境
 
+Docker  
 AWS
 - EC2  
 - SES  
 - RDS  
 - ALB  
 
-Docker
+「就業Termから少なくとも2つ」  
+- AWS
+- コメント機能（編集や削除もできること。投稿失敗時にエラーメッセージをAjaxで出力すること）
 
+「カリキュラム外から１つ以上」
+- Docker
 ---
 ## 機能一覧
 
@@ -85,6 +90,5 @@ https://drive.google.com/file/d/1gl1r52egU9YmNqiH4yYOe9rV9cpgScHE/view?usp=shari
 * nokogiri
 * aws-ses
 * devise
-* aws-ses
 
 ---
