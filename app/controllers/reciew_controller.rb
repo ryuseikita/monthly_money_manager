@@ -1,0 +1,2 @@
+class ReciewController < ApplicationController
+end
