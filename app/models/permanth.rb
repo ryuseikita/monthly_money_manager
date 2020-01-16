@@ -1,4 +1,4 @@
 class Permanth < ApplicationRecord
-    has_one :user
-    has_one :service
+    belongs_to :user
+    belongs_to :service
 end
