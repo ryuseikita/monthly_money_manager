@@ -17,6 +17,8 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   gem 'pry-byebug'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'hirb'
+  gem 'hirb-unicode'
 end
 
 group :development do
