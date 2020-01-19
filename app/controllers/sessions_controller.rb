@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       if user && user.authenticate(params[:session][:password])
         session[:user_id] = user.id
         flash.now[:danger] = 'ログインに成功しました'
-        redirect_to prmanth_path
+        redirect_to permanths_path
       else
         flash.now[:danger] = 'ログインに失敗しました'
         render 'new'
