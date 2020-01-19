@@ -1,0 +1,31 @@
+<% if @services.present? %>
+    <table border="1">
+        <tr>
+            <td></td>
+            <td>名前</td>
+            <td>金額</td>
+        </tr>
+    <% @services.each do |service| %>
+        <tr>
+            <td><input type="radio" name="radio_group" value=<%= service.id %>></td>
+            <td><%= service.name %></td>
+            <td><%= service.money %></td>
+        </tr>
+    <% end %>
+    </table>
+<% else%>
+<p>該当が存在しません。</p>
+<% end %>
+
+
+<p>選択したものは <span id="select_service"></span></p>
+<script>
+$(function() {
+	$('input:radio[name="radio_group"]').change(function() {
+
+		const str1 = $('input:radio[name="radio_group"]:checked').val();
+        $('#select_service').text(str1);
+        $('#permanth_service_id').val(str1);
+	});
+});
+</script>

@@ -1,2 +1,20 @@
-<h1>Permanths#index</h1>
-<p>Find me in app/views/permanths/index.html.erb</p>
+<h1>加入サービス一覧</h1>
+
+<table border="1">
+    <tr>
+        <td>名前</td>
+        <td>金額</td>
+        <td>加入日</td>
+        <td>解約予定日</td>
+    </tr>
+    <% @permanths.each do |permanth| %>
+        <tr>
+            <td><%= permanth.service.name =%></td>
+            <td><%= permanth.service.money =%></td>
+            <td><%= permanth.registration =%></td>
+            <td><%= permanth.cancellation =%></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= link_to '加入サービス追加', new_permanth_path %>
