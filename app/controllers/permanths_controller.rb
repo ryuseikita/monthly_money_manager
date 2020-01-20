@@ -10,10 +10,21 @@ class PermanthsController < ApplicationController
   end
 
   def create
-    redirect_to new_permanth_path
+    @permanth = current_user.permanths.build(permanth_params)
+    if @permanth.save
+     redirect_to permanths_path, notice: "登録しました！"
+    else
+     render 'new'
+    end
   end
 
   def search
     @services = Service.where("name LIKE ?", "%#{params[:search]}%")
   end
+end
+
+private
+
+def permanth_params
+  params.require(:permanth).permit(:service_id, :registration, :cancellation)
 end
