@@ -18,13 +18,11 @@
 <% end %>
 
 
-<p>選択したものは <span id="select_service"></span></p>
 <script>
 $(function() {
 	$('input:radio[name="radio_group"]').change(function() {
 
 		const str1 = $('input:radio[name="radio_group"]:checked').val();
-        $('#select_service').text(str1);
         $('#permanth_service_id').val(str1);
 	});
 });
