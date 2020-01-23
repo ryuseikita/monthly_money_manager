@@ -1,3 +1,7 @@
+<% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+
 <h1>加入サービス一覧</h1>
 
 <table border="1">
@@ -6,6 +10,7 @@
         <td>金額</td>
         <td>加入日</td>
         <td>解約予定日</td>
+        <td></td>
     </tr>
     <% @permanths.each do |permanth| %>
         <tr>
@@ -13,6 +18,7 @@
             <td><%= permanth.service.money =%></td>
             <td><%= permanth.registration =%></td>
             <td><%= permanth.cancellation =%></td>
+            <td><%= link_to '削除', permanth, method: :delete, data: { confirm: '本当に削除しますか?' }, class: 'btn btn-danger' %></td>
         </tr>
     <% end %>
 </table>

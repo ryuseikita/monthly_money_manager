@@ -1,4 +1,6 @@
 class PermanthsController < ApplicationController
+  #before_action :set_permanth,only:[:show,:edit,:update,:destroy]
+  before_action :set_permanth,only:[:destroy]
 
   def index
     @permanths = Permanth.where(user_id: current_user.id)
@@ -21,10 +23,20 @@ class PermanthsController < ApplicationController
   def search
     @services = Service.where("name LIKE ?", "%#{params[:search]}%")
   end
-end
 
-private
+  def destroy
+    @permanth.destroy
+    redirect_to permanths_path,notice:"投稿を削除しました！"
+  end
 
-def permanth_params
-  params.require(:permanth).permit(:service_id, :registration, :cancellation)
+
+  private
+
+  def permanth_params
+    params.require(:permanth).permit(:service_id, :registration, :cancellation)
+  end
+
+  def set_permanth
+    @permanth = Permanth.find(params[:id])
+  end
 end
