@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

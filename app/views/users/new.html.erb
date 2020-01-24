@@ -1,0 +1,26 @@
+<h1>新しいアカウントの作成</h1>
+<div class="container">
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+   <div class="form-group">
+        <%= form_with(model: @user, local: true) do |f| %>
+          <%= f.label :name %>
+          <%= f.text_field :name,class:'form-control'%>
+          <%= f.label :email %>
+          <%= f.email_field :email,class:'form-control' %>
+          <%= f.label :password %>
+          <%= f.password_field :password,class:'form-control' %>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation,class:'form-control' %>
+          <%= f.submit "新しいアカウントの作成" ,class:'btn btn-default'%>
+        <% end %>
+    </div>
+</div>
