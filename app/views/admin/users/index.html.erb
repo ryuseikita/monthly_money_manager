@@ -1,0 +1,13 @@
+<h1>管理画面：ユーザ</h1>
+<table border="1">
+    <tr>
+        <td>名前</td>
+        <td>メールアドレス</td>
+    </tr>
+    <% @users.each do |user| %>
+        <tr>
+            <td><%= user.name =%></td>
+            <td><%= user.email =%></td>
+        </tr>
+    <% end %>
+</table>
