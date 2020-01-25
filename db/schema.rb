@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_23_135104) do
+ActiveRecord::Schema.define(version: 2020_01_24_145256) do
 
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.boolean "mail_flag"
-    t.boolean "slack_flag"
-    t.boolean "linebot_flag"
+    t.boolean "mail_flag", default: false, null: false
+    t.boolean "slack_flag", default: false, null: false
+    t.boolean "linebot_flag", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
   end
 
   create_table "permanths", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "service_id"
+    t.integer "user_id", null: false
+    t.integer "service_id", null: false
     t.datetime "registration"
     t.datetime "cancellation"
     t.datetime "created_at", null: false
@@ -31,15 +31,15 @@ ActiveRecord::Schema.define(version: 2020_01_23_135104) do
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "service_id"
-    t.integer "user_id"
+    t.integer "service_id", null: false
+    t.integer "user_id", null: false
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.integer "money"
     t.text "details"
     t.string "icon"
@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 2020_01_23_135104) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.string "icon"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_digest", null: false
+    t.string "icon", default: "default_icon.jpg", null: false
     t.boolean "admin_flag", default: false
     t.boolean "comment_flag", default: true
     t.datetime "created_at", null: false
