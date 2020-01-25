@@ -16,14 +16,3 @@
 <% else%>
 <p>該当が存在しません。</p>
 <% end %>
-
-
-<script>
-$(function() {
-	$('input:radio[name="radio_group"]').change(function() {
-
-		const str1 = $('input:radio[name="radio_group"]:checked').val();
-        $('#permanth_service_id').val(str1);
-	});
-});
-</script>
