@@ -1,3 +1,4 @@
+<% @sum=0 %>
 <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
 <% end %>
@@ -13,6 +14,7 @@
         <td></td>
     </tr>
     <% @permanths.each do |permanth| %>
+    <% @sum= @sum + permanth.service.money %>
         <tr>
             <td><%= permanth.service.name =%></td>
             <td><%= permanth.service.money =%></td>
@@ -22,5 +24,8 @@
         </tr>
     <% end %>
 </table>
+
+<h3>合計金額：<%= @sum =%></h3>
+
 
 <%= link_to '加入サービス追加', new_permanth_path %>
