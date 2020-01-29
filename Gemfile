@@ -15,6 +15,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap','~> 4.1.1'
 gem 'jquery-rails'
+#画像アップロードgem
+gem 'carrierwave'
+gem 'fog'
 
 group :development, :test do
   gem 'pry-byebug'

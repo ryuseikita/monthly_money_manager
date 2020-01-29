@@ -1,0 +1,13 @@
+current directory: /Users/suzukiryusei/workspace/monthly_money_manager/vendor/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+/Users/suzukiryusei/.rbenv/versions/2.6.3/bin/ruby -I /Users/suzukiryusei/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20200129-11089-ujnubx.rb extconf.rb
+creating Makefile
+
+current directory: /Users/suzukiryusei/workspace/monthly_money_manager/vendor/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/suzukiryusei/workspace/monthly_money_manager/vendor/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/suzukiryusei/workspace/monthly_money_manager/vendor/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+make "DESTDIR=" install

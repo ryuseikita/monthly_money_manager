@@ -1,0 +1,20 @@
+language: ruby
+cache: bundler
+sudo: false
+dist: trusty
+matrix:
+  fast_finish: true
+  include:
+    - rvm: 2.1
+    - rvm: 2.2
+    - rvm: 2.3
+    - rvm: 2.4
+    - rvm: 2.5
+    - rvm: jruby-head
+  allow_failures:
+  # allow 2.5 to fail until Travis CI is fixed.
+  # See travis-ci/travis-ci#8969
+    - rvm: 2.5
+    - rvm: jruby-head
+notifications:
+  email: false
