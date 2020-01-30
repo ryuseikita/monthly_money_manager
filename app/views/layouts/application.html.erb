@@ -12,7 +12,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <%= link_to "Monthly Money Manager", permanths_path ,class: "navbar-brand"%>
+      <%= link_to "Monthly Money Manager", tops_path ,class: "navbar-brand"%>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,7 +30,9 @@
           <li class="nav-item">
             <% if logged_in? %>
               <%= link_to current_user.name, edit_user_path(current_user.id) ,class: "nav-link"%>
-            <% end %></a>
+            <%elsif%>
+              <%= link_to "ログイン", new_session_path,class: "nav-link"%>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,11 +40,10 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
             <div class="dropdown-divider"></div>
             <% if logged_in? %>
               <%= link_to "ログアウト", session_path(current_user.id), method: :delete ,class: "dropdown-item"%>
-            <% end %></a>
+            <% end %>
           </div>
           </li>
           <li class="nav-item">

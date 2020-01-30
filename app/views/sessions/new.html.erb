@@ -1,13 +1,26 @@
-<% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "#{key}") %>
-<% end %>
-
-<h1>ログイン</h1>
-    <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-      <%= f.submit "ログイン" %>
-    <% end %>
-<%= link_to "新しいアカウントの作成", new_user_path %>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-lg-6">
+      <h1>ログイン</h1>
+      <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+      <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email ,class:'form-control'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password ,class:'form-control'%>
+      </div>
+      <div class="form-group">
+        <%= f.submit "ログイン" ,class:'btn btn-primary'%>
+      </div>
+      <% end %>
+      <%= link_to "新しいアカウントの作成", new_user_path %>
+    </div>
+    <div class="col"></div>  
+  </div>
+</div>
