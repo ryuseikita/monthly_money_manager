@@ -1,10 +1,12 @@
 <h1>ユーザ編集画面</h1>
 
-
-<p><%= @user.name %></p>
-<p><%= image_tag  @user.icon.to_s%></p>
-
 <div class="container">
+  <div class=row>
+    <div class="col-lg-4">
+      <p><%= @user.name %></p>
+      <p><%= image_tag  @user.icon.to_s%></p>
+    </div>
+    <div class="col-lg-8">
       <% if @user.errors.any? %>
         <div id="error_explanation">
           <h2><%= @user.errors.count %>件のエラーがあります。</h2>
@@ -18,9 +20,7 @@
       <div class="form-group">
         <%= form_with(model: @user, local: true , ) do |form| %>
             <%= form.label :name %>
-            <%= form.text_area :name,class:'form-control' %>
-            <%= form.label :name %>
-            <%= form.text_area :name,class:'form-control' %>
+            <%= form.text_field :name,class:'form-control' %>
             <%= form.label :icon %>
             <%= form.file_field :icon,class:'form-control'%>
             <%= form.label :password %>
@@ -31,4 +31,5 @@
             <%= form.submit %>
         <% end %>
       </div>
+  </div>
 </div>
