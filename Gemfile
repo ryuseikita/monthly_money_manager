@@ -17,7 +17,9 @@ gem 'bootstrap','~> 4.1.1'
 gem 'jquery-rails'
 #画像アップロードgem
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
+#envファイル読み出し用
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-byebug'
