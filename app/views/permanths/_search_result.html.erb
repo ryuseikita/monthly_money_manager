@@ -7,7 +7,7 @@
         </tr>
     <% @services.each do |service| %>
         <tr>
-            <td><input type="radio" name="radio_group" value=<%= service.id %>></td>
+            <td><input class="uk-radio" type="radio" name="radio_group" value=<%= service.id %> ></td>
             <td><%= service.name %></td>
             <td><%= service.money %></td>
         </tr>
