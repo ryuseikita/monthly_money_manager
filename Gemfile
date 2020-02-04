@@ -20,6 +20,9 @@ gem 'carrierwave'
 gem 'fog-aws'
 #envファイル読み出し用
 gem 'dotenv-rails'
+#cron
+gem 'whenever'
+
 
 group :development, :test do
   gem 'pry-byebug'
