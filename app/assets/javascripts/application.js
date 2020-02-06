@@ -16,6 +16,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require uikit.min
-//= require uikit-icons.min
 //= require_tree .
