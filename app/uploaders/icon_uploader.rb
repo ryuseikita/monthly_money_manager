@@ -1,6 +1,6 @@
 class IconUploader < CarrierWave::Uploader::Base
   if Rails.env.development?
-    storage :file
+    storage :fog
   elsif Rails.env.test?
     storage :file
   else
@@ -17,5 +17,13 @@ class IconUploader < CarrierWave::Uploader::Base
 
   def filename
     original_filename if original_filename
+  end
+
+  def default_url(*args)
+    ActionController::Base.helpers.asset_path("/" + [version_name, "default_icon.jpg"].compact.join('_'))
+  end
+
+  def default_url(*args)
+   [version_name, "default_icon.jpg"].compact.join('_')
   end
 end
