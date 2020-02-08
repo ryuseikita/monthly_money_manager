@@ -6,4 +6,8 @@ module ApplicationHelper
       def logged_in?
         current_user.present?
       end
+
+      def admin?
+        @current_user.admin_flag
+      end
 end
