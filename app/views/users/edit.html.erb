@@ -1,11 +1,6 @@
-<h1>ユーザ編集画面</h1>
-
 <div class="container">
+  <h1>ユーザ編集画面</h1>
   <div class=row>
-    <div class="col-lg-4">
-      <p><%= @user.name %></p>
-      <p><%= image_tag  @user.icon.to_s%></p>
-    </div>
     <div class="col-lg-8">
       <% if @user.errors.any? %>
         <div id="error_explanation">

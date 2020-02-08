@@ -1,0 +1,2 @@
+$("#reviews_area").html("<%= j(render 'reviews/index', { reviews: @review.commit.reviews, service: @review.comment }) %>")
+$("textarea").val('')

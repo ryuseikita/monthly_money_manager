@@ -6,6 +6,8 @@ class ServicesController < ApplicationController
   end
 
   def show
+   @reviews = @service.reviews
+   @review = @service.reviews.build
   end
 
   def new

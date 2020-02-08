@@ -1,0 +1,9 @@
+<ul>
+  <% reviews.each do |review| %>
+    <% if review.id.present? %>
+      <li>
+        <p><%= review.comment %></p>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

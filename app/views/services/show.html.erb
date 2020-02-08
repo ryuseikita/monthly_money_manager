@@ -1,4 +1,21 @@
-<%= image_tag  @service.icon.to_s%>
-<%= @service.name %>
-<%= @service.money %>
-<%= @service.details %>
+<div class="container">
+    <h1><%= @service.name %></h1>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col-md-6">
+            <%= image_tag @service.icon.to_s ,width: "100%" %>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h4 class="card-title">金額：<%= @service.money %>円</h4>
+            <p class="card-text"><%= @service.details %></p>
+          </div>
+        </div>
+      </div>
+      </div>
+    <div id="reviews_area">
+    <%= render partial: 'reviews/index', locals: { reviews: @reviews, service: @service } %>
+    </div>
+
+    <%= render partial: 'reviews/form', locals: { review: @review, service: @service } %>
+</div>

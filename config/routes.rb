@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root to: 'tops#index'
   resources :tops,only: [:index]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :services
+  resources :services do
+    resources :reviews
+  end
   resources :users
   namespace :admin do
     resources :users
