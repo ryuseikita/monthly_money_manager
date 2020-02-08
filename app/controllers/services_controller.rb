@@ -28,7 +28,7 @@ class ServicesController < ApplicationController
   end
 
   def set_service
-    @service = service.find(params[:id])
+    @service = Service.find(params[:id])
   end
 
 end
