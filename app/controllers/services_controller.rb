@@ -8,14 +8,27 @@ class ServicesController < ApplicationController
   def show
   end
 
+  def new
+    @service = Service.new
+  end
+
+  def create
+    @service = Service.new(service_params)
+    if @service.save
+     redirect_to services_path, notice: "登録しました！"
+    else
+     render 'new'
+    end
+  end
+
   private
 
-  # def service_params
-  #   params.require(:permanth).permit(:service_id, :registration, :cancellation)
-  # end
+  def service_params
+    params.require(:service).permit(:name,:service_id, :money, :details ,:icon)
+  end
 
   def set_service
-    @service = Service.find(params[:id])
+    @service = service.find(params[:id])
   end
 
 end
