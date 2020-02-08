@@ -29,7 +29,6 @@ class PermanthsController < ApplicationController
     redirect_to permanths_path,notice:"投稿を削除しました！"
   end
 
-
   private
 
   def permanth_params
