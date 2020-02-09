@@ -1,9 +1,17 @@
-<ul>
+<div class="mt-3">
   <% reviews.each do |review| %>
     <% if review.id.present? %>
-      <li>
-        <p><%= review.comment %></p>
-      </li>
+    <div class="media">
+      <%= image_tag review.user.icon.to_s ,class:"mr-3",height:"40px"%>
+      <div class="media-body">
+      <h6><%= review.user.name %></h6>
+       <p><%= review.comment %></p>
+      </div>
+    </div>
     <% end %>
-  <% end %>
-</ul>
+<% end %>
+</div>
+
+
+
+
