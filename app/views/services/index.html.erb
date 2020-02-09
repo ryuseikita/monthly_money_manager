@@ -9,6 +9,9 @@
                     <h5 class="card-text"><%= service.name %></h5>
                     <p class="card-text">金額：<%= service.money %>円</p>
                     <%= link_to "Review", service_path(service.id) ,class: "btn btn-primary"%>
+                    <% if admin?%>
+                        <%= link_to 'Delete', service_path(service.id), method: :delete, data: { confirm: '本当に削除しますか?' }, class: 'btn btn-danger' %>
+                    <% end %>
                 </div>
             </div>
         </div>

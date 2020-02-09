@@ -4,7 +4,11 @@
     <div class="media">
       <%= image_tag review.user.icon.to_s ,class:"mr-3",height:"40px"%>
       <div class="media-body">
-      <h6><%= review.user.name %></h6>
+      <h6><%= review.user.name %>
+        <% if current_user == review.user%>
+          <%= link_to '✗', service_review_path(service.id,review.id), method: :delete, data: { confirm: 'コメントを削除しますか?' }, class: 'btn btn-danger btn-sm' %>
+        <% end %>
+      </h6>
        <p><%= review.comment %></p>
       </div>
     </div>
