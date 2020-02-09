@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :set_service,only:[:show]
+  before_action :set_service,only:[:show,:destroy]
 
   def index
     @services = Service.all
@@ -17,10 +17,15 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     if @service.save
-     redirect_to services_path, notice: "登録しました！"
+     redirect_to services_path, notice: "登録しました"
     else
      render 'new'
     end
+  end
+
+  def destroy
+    @service.destroy
+    redirect_to services_path,notice:"既存サービスを削除しました"
   end
 
   private
