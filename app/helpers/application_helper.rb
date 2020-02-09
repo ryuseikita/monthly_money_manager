@@ -8,6 +8,6 @@ module ApplicationHelper
       end
 
       def admin?
-        @current_user.admin_flag
+        current_user.admin_flag
       end
 end
