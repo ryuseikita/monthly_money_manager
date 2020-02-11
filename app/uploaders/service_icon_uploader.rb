@@ -1,6 +1,6 @@
 class ServiceIconUploader < CarrierWave::Uploader::Base
   if Rails.env.development?
-    storage :file
+    storage :fog
   elsif Rails.env.test?
     storage :file
   else
@@ -12,7 +12,7 @@ class ServiceIconUploader < CarrierWave::Uploader::Base
   end
 
   def cache_dir
-    "cache"
+    "service_icon_uploads/#{model.class.to_s.underscore}/"
   end
 
   def extension_whitelist
