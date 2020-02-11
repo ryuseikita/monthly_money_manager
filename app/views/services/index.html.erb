@@ -1,6 +1,5 @@
-<h1>サブスクリプション一覧</h1>
 <div class="container">
-
+<h1>サブスクリプション一覧</h1>
     <div class="row">
         <% @services.each do |service| %>
         <div class="col-md-6 col-lg-4">
@@ -10,10 +9,10 @@
                         <%= image_tag service.icon.to_s ,class:"mr-3",height:"40px"%>
                         <%= service.name %>
                     </h5>
-                    <p class="card-text">金額：<%= service.money %>円</p>
-                    <%= link_to "Review", service_path(service.id) ,class: "btn btn-primary"%>
+                    <p>金額：<%= service.money %>円</p>
+                    <%= link_to "Review", service_path(service.id) ,class: "btn btn-primary btn-sm"%>
                     <% if admin?%>
-                        <%= link_to 'Delete', service_path(service.id), method: :delete, data: { confirm: '本当に削除しますか?' }, class: 'btn btn-danger' %>
+                        <%= link_to 'Delete', service_path(service.id), method: :delete, data: { confirm: '本当に削除しますか?' }, class: 'btn btn-danger btn-sm' %>
                     <% end %>
                 </div>
             </div>
