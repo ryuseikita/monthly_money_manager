@@ -5,11 +5,11 @@
 <div class='container'>
     <h1>サブスクリプション</h1>
     <div class='row'>
-        <div class='col-md-2'>
+        <div class='col-md-12 col-lg-2'>
             <h3>合計金額：<%= @sum %></h3>
             <%= link_to '加入サービス追加', new_permanth_path %>
         </div>
-        <div class='col-md-10'>
+        <div class='col-md-12 col-lg-10'>
             <div class='row'>
                 <% @permanths.each do |permanth| %>
                     <div class='col-md-12 col-lg-5'>
@@ -21,7 +21,7 @@
                                 <table class="table table-borderless my-2">
                                         <tbody>
                                             <tr>
-                                                <td class='p-0'style="width:25%" >金額</td>
+                                                <td class='p-0'style="width:30%" >金額</td>
                                                 <td class='p-0'>
                                                     <%= permanth.service.money %>
                                                 </td>
@@ -32,7 +32,7 @@
                                     <table class="table table-borderless ">
                                         <tbody>
                                             <tr>
-                                                <td class='p-0'style="width:25%" >登録日</td>
+                                                <td class='p-0'style="width:30%" >登録日</td>
                                                 <td class='p-0'>
                                                     <% if permanth.registration.present?%>
                                                         <%= l permanth.registration, format: :short %>
