@@ -1,30 +1,67 @@
-<% @sum=0 %>
 <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
 <% end %>
 
-<h1>加入サービス一覧</h1>
-
-<table border="1">
-    <tr>
-        <td>名前</td>
-        <td>金額</td>
-        <td>加入日</td>
-        <td>解約予定日</td>
-        <td></td>
-    </tr>
-    <% @permanths.each do |permanth| %>
-    <% @sum= @sum + permanth.service.money %>
-        <tr>
-            <td><%= permanth.service.name =%></td>
-            <td><%= permanth.service.money =%></td>
-            <td><%= permanth.registration =%></td>
-            <td><%= permanth.cancellation =%></td>
-            <td><%= link_to '削除', permanth, method: :delete, data: { confirm: '本当に削除しますか?' }, class: 'btn btn-danger' %></td>
-        </tr>
-    <% end %>
-</table>
-
-<h3>合計金額：<%= @sum =%></h3>
-
-<%= link_to '加入サービス追加', new_permanth_path %>
+<div class='container'>
+    <h1>サブスクリプション</h1>
+    <div class='row'>
+        <div class='col-md-2'>
+            <h3>合計金額：<%= @sum %></h3>
+            <%= link_to '加入サービス追加', new_permanth_path %>
+        </div>
+        <div class='col-md-10'>
+            <div class='row'>
+                <% @permanths.each do |permanth| %>
+                    <div class='col-md-12 col-lg-5'>
+                        <div class="card bg-light border-info mt-1" >
+                            <div class='card-body'>
+                                <h5 class='card-title'><%= permanth.service.name %>
+                                <button type="button" class="btn btn-info btn-sm float-right" data-toggle="collapse" data-target="#<%=permanth.service.name%>">⇓</button>
+                                </h5>
+                                <table class="table table-borderless my-2">
+                                        <tbody>
+                                            <tr>
+                                                <td class='p-0'style="width:25%" >金額</td>
+                                                <td class='p-0'>
+                                                    <%= permanth.service.money %>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                </table>
+                                    <div id="<%= permanth.service.name %>" class="collapse">
+                                    <table class="table table-borderless ">
+                                        <tbody>
+                                            <tr>
+                                                <td class='p-0'style="width:25%" >登録日</td>
+                                                <td class='p-0'>
+                                                    <% if permanth.registration.present?%>
+                                                        <%= l permanth.registration, format: :short %>
+                                                    <% else %>
+                                                        <span>登録なし</span>
+                                                    <% end %>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                            <td class='p-0'>解除予定</td>
+                                            <td class='p-0'>
+                                            <% if permanth.cancellation.present?%>
+                                                <%= l permanth.cancellation, format: :short %>
+                                            <% else %>
+                                                <span>登録なし</span>
+                                            <% end %>
+                                            </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class='card-text text-right'>
+                                        <%= link_to '削除', permanth, method: :delete, data: { confirm: '本当に削除しますか?' }, class: 'btn btn-danger btn-sm' %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,4 +10,12 @@ module ApplicationHelper
       def admin?
         current_user.admin_flag
       end
+
+      def user_money(permanths)
+        sum = 0
+        permanths.each do | permanth |
+          sum= sum + permanth.service.money
+        end
+        return sum
+    end
 end
