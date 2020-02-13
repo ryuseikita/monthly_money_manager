@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def new
-    test_user
   end
 
   def create

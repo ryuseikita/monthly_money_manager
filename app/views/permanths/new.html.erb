@@ -1,30 +1,46 @@
-<% if @permanth.errors.any? %>
-    <h2><%= @permanth.errors.count %>件のエラーがあります。</h2>
-    <ul>
-        <% @permanth.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+<div class='container'>
+    <div class='row'>
+        <div class="col"></div>
+        <div class='col-md-6'>
+        <h1>登録</h1>
+        <% if @permanth.errors.any? %>
+            <h2><%= @permanth.errors.count %>件のエラーがあります。</h2>
+            <ul>
+                <% @permanth.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
         <% end %>
-    </ul>
-<% end %>
+            <%= form_tag( {url: 'search_permanths', action: :search},id: :fs, remote: true) do %>
+                <%= text_field_tag :search %>
+                <%= submit_tag "検索" %>
+            <% end %>
+                <div id="search_result"></div>
+                    <%= form_with(model: @permanth, local: true ) do |form| %>
+                        <%= form.hidden_field :service_id %>
+                        <div class="form-group">
+                            <%= form.label :registration %>
+                            <%= form.text_field :registration ,class:'form-control datetimepicker-input', id: "registration", data: {toggle: "datetimepicker", target: "#registration"} %>
+                        </div>
+                        <div class="form-group">
+                            <%= form.label :cancellation %>
+                            <%= form.text_field :cancellation ,class:'form-control datetimepicker-input', id: "cancellation", data: {toggle: "datetimepicker", target: "#cancellation"} %>
+                        </div>
+                            <%= form.submit "登録", class:'btn btn-primary'%>
+                <% end %>
+                <%= link_to "一覧画面にもどる", permanths_path%>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
 
-<%= form_tag( {url: 'search_permanths', action: :search},id: :fs, remote: true) do %>
-    <%= text_field_tag :search %>
-    <%= submit_tag "検索" %>
-<% end %>
-    <div id="search_result"></div>
-    <div class="container-fluid">
-        <%= form_with(model: @permanth, local: true ) do |form| %>
-            <%= form.hidden_field :service_id %>
-            <div class="form-group">
-                <%= form.label :registration %><br>
-                <%= form.datetime_field :registration %>
-            </div>
-            <div class="form-group">
-                <%= form.label :cancellation %><br>
-                <%= form.datetime_field :cancellation %>
-            </div>
-                <%= form.submit class:'btn btn-default'%>
-        <% end %>
-  </div>
-<br>
-    <%= link_to "一覧画面にもどる", permanths_path%>
+        <script type="text/javascript">
+            $(function () {
+                $('#registration').datetimepicker({
+                    format: 'L'
+                });
+                $('#cancellation').datetimepicker({
+                    format: 'L'
+                });
+            });
+        </script>
