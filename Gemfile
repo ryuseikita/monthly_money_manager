@@ -22,6 +22,11 @@ gem 'fog-aws'
 gem 'dotenv-rails'
 #cron
 gem 'whenever'
+#カレンダー装飾用
+gem "bootstrap4-datetime-picker-rails"
+gem 'momentjs-rails'
+gem "font-awesome-rails"
+
 
 
 group :development, :test do
