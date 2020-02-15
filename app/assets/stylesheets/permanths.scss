@@ -1,3 +1,65 @@
 // Place all the styles related to the permanths controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cp_ipradio {
+	margin-top: 2em;
+	text-align: left;
+}
+.cp_ipradio ul {
+	padding: 0;
+	list-style: none;
+	border: 1px solid #cccccc;
+}
+.cp_ipradio .list_item {
+	margin: 0;
+	padding: 0;
+}
+.cp_ipradio label {
+	line-height: 135%;
+	position: relative;
+    cursor: pointer;
+    display: block;
+	padding: 12px 16px;
+	margin-bottom: 0;
+}
+.cp_ipradio span {
+	display: flex;
+}
+.cp_ipradio label:hover{
+    background-color: wheat;
+}
+
+.cp_ipradio .option-input {
+	position: relative;
+	margin: 0 1rem 0 0;
+	cursor: pointer;
+}
+.cp_ipradio .option-input:before,
+.cp_ipradio .option-input:after {
+	position: absolute;
+	z-index: 1;
+	top: -0.125rem;
+	left: -0.125rem;
+	width: 1rem;
+	height: 1rem;
+	content: '';
+	-webkit-transition: all 0.3s ease-in-out;
+	        transition: all 0.3s ease-in-out;
+	border-radius: 50%;
+	background: #ffffff;
+}
+.cp_ipradio .option-input:after {
+	z-index: 0;
+	top: -0.25rem;
+	left: -0.25rem;
+	width: 1.25rem;
+	height: 1.25rem;
+	background: #da3c41;
+}
+.cp_ipradio .option-input:checked:before {
+	-webkit-transform: scale(0, 0);
+	        transform: scale(0, 0);
+	border-width: 0.625rem;
+	border-color: #da3c41;
+}

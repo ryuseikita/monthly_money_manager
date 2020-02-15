@@ -1,18 +1,27 @@
 <% if @services.present? %>
-    <table border="1">
-        <tr>
-            <td></td>
-            <td>名前</td>
-            <td>金額</td>
-        </tr>
-    <% @services.each do |service| %>
-        <tr>
-            <td><input class="uk-radio" type="radio" name="radio_group" value=<%= service.id %> ></td>
-            <td><%= service.name %></td>
-            <td><%= service.money %></td>
-        </tr>
-    <% end %>
-    </table>
+  <div class="cp_ipradio">
+      <ul>
+      <% @services.each do |service| %>
+          <li class="list_item">
+          <label>
+          <div class="row">
+          <div class="col-2">
+          <input type="radio" class="option-input" name="radio_group" value=<%= service.id %> checked>
+          </div>
+            <div class="col-5">
+              <p><%= service.name %></p>
+            </div>
+            <div class="col-5">
+              <p>￥<%= service.money %></p>
+            </div>
+          </div>
+          </label>
+          </li>
+      <%end%>
+      </ul>
+  </div>
 <% else%>
-<p>該当が存在しません。</p>
+      <ul>
+          <p>該当が存在しません。</p>
+      </ul>
 <% end %>
