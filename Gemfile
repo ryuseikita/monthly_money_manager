@@ -26,6 +26,8 @@ gem 'whenever'
 gem "bootstrap4-datetime-picker-rails"
 gem 'momentjs-rails'
 gem "font-awesome-rails"
+#ページネーション
+gem 'kaminari'
 
 
 

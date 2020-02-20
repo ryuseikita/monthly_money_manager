@@ -1,13 +1,24 @@
-<h1>管理画面：ユーザ</h1>
-<table border="1">
-    <tr>
-        <td>名前</td>
-        <td>メールアドレス</td>
-    </tr>
-    <% @users.each do |user| %>
-        <tr>
-            <td><%= user.name =%></td>
-            <td><%= user.email =%></td>
+<div class="container">
+  <div class='col'>
+    <h1>管理画面：ユーザ</h1>
+    <table class='table tablestriped table-hover'>
+      <thead>
+        <tr class='table-active'>
+            <th scope='row'>名前</td>
+            <th scope='row'>メールアドレス</td>
+            <th scope='row'>コメント有無</th>
         </tr>
-    <% end %>
-</table>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.name =%></td>
+                <td><%= user.email =%></td>
+                <td>ボタン予定</td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+    <%= paginate @users %>
+  </div>
+</div>
