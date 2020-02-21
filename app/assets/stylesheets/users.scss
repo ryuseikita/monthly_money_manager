@@ -1,3 +1,61 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*---------- vertical tab nav */
+#vertical_tab_nav{
+    display: block;
+    width: 100%;
+}
+#vertical_tab_nav ul{
+    display: block;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    overflow: hidden;
+    width: 30%;
+  border-radius: 10px 0 0 10px;
+  background: #555;
+}
+#vertical_tab_nav li{
+    border-bottom: 1px solid #000;
+  margin-bottom: 1px;
+    text-align: left;
+    padding: 0px;
+}
+#vertical_tab_nav li:last-child{
+    margin-bottom: 0px;
+  border-bottom: 0px;
+}
+#vertical_tab_nav li a{
+    display: block;
+    font-size: 14pt;
+    color: #fff;
+    text-decoration: none;
+    padding: 7%;
+    background: gray;
+  background: -webkit-linear-gradient(top,#444,#333);
+  background: -moz-linear-gradient(top,#444,#333);
+}
+#vertical_tab_nav li a.selected{
+    background: wheat;
+    color: #000;
+}
+#vertical_tab_nav div{
+    display: block;
+    float: left;
+    background: wheat;
+    width:64%;
+    min-height: 500px;
+    padding: 10px 3% 3% 3%;
+  border-radius: 0 10px 10px 0;
+}
+#vertical_tab_nav div article{
+    display: none;
+    margin: 0px;
+    color: #555;
+}
+#vertical_tab_nav div article p{
+    margin: 0px 0px 20px 0px;
+}
