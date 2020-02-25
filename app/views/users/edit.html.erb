@@ -31,10 +31,11 @@
                     <%= form_with(model: @user, local: true , ) do |form| %>
                         <%= form.label :name %>
                         <%= form.text_field :name,class:'form-control' %>
+                        <%= image_tag @user.icon.to_s ,width:'50%' %>
                         <%= form.label :icon %>
                         <%= form.file_field :icon,class:'form-control'%>
 
-                        <%= form.submit "保存" ,class:'form-control'%>
+                        <%= form.submit "保存" %>
                     <% end %>
                 </article>
                 <article>
@@ -49,13 +50,13 @@
                         </li>
                         <li class="list_item">
                           <label>
-                            <%= form.check_box :slack_flag,class:'option-input06'%>
+                            <%= form.check_box :slack_flag,class:'option-input06', disabled: true %>
                             スラックへの配信（未実装）
                           </label>
                         </li>
                         <li class="list_item">
                           <label>
-                            <%= form.check_box :linebot_flag,class:'option-input06' %>
+                            <%= form.check_box :linebot_flag,class:'option-input06',disabled: true %>
                             ラインボットへの配信（未実装）
                           </label>
                         </li>
