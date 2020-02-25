@@ -11,23 +11,12 @@
     </div>
   <% end %>
   <section id="vertical_tab_nav">
-            <ul>
-                <li><a href="#">プロファイル</a></li>
-                <li><a href="#">パスワード</a></li>
-                <li><a href="#">通知設定</a></li>
-            </ul>
-
-            <div>
-                <article>
-                    <%= form_with(model: @user, local: true , ) do |form| %>
-                        <%= form.label :name %>
-                        <%= form.text_field :name,class:'form-control' %>
-                        <%= form.label :icon %>
-                        <%= form.file_field :icon,class:'form-control'%>
-
-                        <%= form.submit "保存"%>
-                    <% end %>
-                </article>
+    <ul>
+        <li><a href="#">パスワード</a></li>
+        <li><a href="#"　class="selected">プロファイル</a></li>
+        <li><a href="#">通知設定</a></li>
+    </ul>
+      <div>
                 <article>
                   <%= form_with(model: @user, local: true , ) do |form| %>
                       <%= form.label :password %>
@@ -44,16 +33,39 @@
                         <%= form.text_field :name,class:'form-control' %>
                         <%= form.label :icon %>
                         <%= form.file_field :icon,class:'form-control'%>
-                        <%= form.label :password %>
-                        <%= form.password_field :password,class:'form-control' %>
-                        <%= form.label :password_confirmation %>
-                        <%= form.password_field :password_confirmation,class:'form-control' %>
 
-                        <%= form.submit "保存"%>
+                        <%= form.submit "保存" ,class:'form-control'%>
                     <% end %>
                 </article>
-            </div>
-        </section>
+                <article>
+                    <div class="cp_ipcheck">
+                    <%= form_with(model: @delivery, URL:delivery_path(@delivery.id) ,local: true , ) do |form| %>
+                      <ul>
+                        <li class="list_item">
+                          <label>
+                            <%= form.check_box :mail_flag,class:'option-input06' %>
+                            メール配信
+                          </label>
+                        </li>
+                        <li class="list_item">
+                          <label>
+                            <%= form.check_box :slack_flag,class:'option-input06'%>
+                            スラックへの配信（未実装）
+                          </label>
+                        </li>
+                        <li class="list_item">
+                          <label>
+                            <%= form.check_box :linebot_flag,class:'option-input06' %>
+                            ラインボットへの配信（未実装）
+                          </label>
+                        </li>
+                      </ul>
+                        <%= form.submit "保存" ,class:'form-control'%>
+                    <% end %>
+                    </div>
+                </article>
       </div>
+  </section>
 </div>
+
 

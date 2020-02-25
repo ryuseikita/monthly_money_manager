@@ -14,6 +14,6 @@ Rails.application.routes.draw do
       post 'search'
     end
   end
-  resources :deliveies
+  resources :deliveries
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

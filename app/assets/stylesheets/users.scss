@@ -7,7 +7,7 @@
     display: block;
     width: 100%;
 }
-#vertical_tab_nav ul{
+#vertical_tab_nav > ul{
     display: block;
     float: left;
     margin: 0px;
@@ -19,7 +19,6 @@
   background: #555;
 }
 #vertical_tab_nav li{
-    border-bottom: 1px solid #000;
   margin-bottom: 1px;
     text-align: left;
     padding: 0px;
@@ -42,7 +41,7 @@
     background: wheat;
     color: #000;
 }
-#vertical_tab_nav div{
+#vertical_tab_nav > div{
     display: block;
     float: left;
     background: wheat;
@@ -58,4 +57,67 @@
 }
 #vertical_tab_nav div article p{
     margin: 0px 0px 20px 0px;
+}
+
+.cp_ipcheck {
+	margin: 2em auto;
+	text-align: left;
+}
+.cp_ipcheck ul {
+	margin: 0.5rem 0.5rem 2rem 0.5rem;
+	padding: 0.5rem 1rem;
+	list-style: none;
+}
+.cp_ipcheck .list_item {
+	margin: 0 0 0.5rem 0;
+	padding: 0;
+}
+.cp_ipcheck label {
+	line-height: 135%;
+	position: relative;
+	margin: 0.5rem;
+	padding-left: 1rem;
+  cursor: pointer;
+}
+.cp_ipcheck .option-input06 {
+	position: relative;
+	top: -0.375rem;
+	margin: 0 1rem 0 0;
+	cursor: pointer;
+	outline: none;
+	-webkit-appearance: none;
+}
+.cp_ipcheck .option-input06:before, .option-input06:after {
+	position: absolute;
+	z-index: 1;
+	top: -0.0625rem;
+	left: -1rem;
+	width: 1rem;
+	height: 1rem;
+	content: '';
+	-webkit-transition: -webkit-transform 0.4s ease-in-out, border-top 0.4s ease-in-out, border-bottom 0.4s ease-in-out, border-left 0.1s 0.3s ease-in-out, border-right 0.1s 0.3s ease-in-out;
+	        transition:         transform 0.4s ease-in-out, border-top 0.4s ease-in-out, border-bottom 0.4s ease-in-out, border-left 0.1s 0.3s ease-in-out, border-right 0.1s 0.3s ease-in-out;
+	-webkit-transform: translateX(0) translateY(-0.5rem);
+	        transform: translateX(0) translateY(-0.5rem);
+	border: 2px solid #868686;
+	border-top-style: none;
+	border-right-style: none;
+}
+.cp_ipcheck .option-input06:after {
+	z-index: 0;
+	border: 2px solid #868686;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.cp_ipcheck .option-input06:checked:before {
+	-webkit-transform: rotate(-45deg) translateX(0.25rem) translateY(-0.75rem);
+	        transform: rotate(-45deg) translateX(0.25rem) translateY(-0.75rem);
+	border-color: #e74c3c;
+	border-left-style: none;
+}
+.cp_ipcheck .option-input06:checked:after {
+	-webkit-transform: rotate(45deg) translateX(-0.25rem) translateY(0.25rem);
+	        transform: rotate(45deg) translateX(-0.25rem) translateY(0.25rem);
+	border-color: #e74c3c;
+	border-right-style: none;
 }
