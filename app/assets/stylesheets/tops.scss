@@ -8,10 +8,10 @@ html, body {
 }
 .wrapper {
   min-height: 100%;
- 
   /* フッタの高さと等しいネガティブマージン */
   /* また最後の子要素の潜在的なマージンとしても機能 */
   margin-bottom: -50px;
+  background-color: #F9F9F7;
 }
 .footer,
 .push {
@@ -20,10 +20,21 @@ html, body {
   color: white;
 }
 
-.bg-dark{
- background-color: #7D7D7F;
+.title-back,
+.footer-back{
+ background-color: #5a5a5a;
 }
 
 .wrapper .container .title{
   color: #F5B428;
+}
+
+.center-form {
+  background-color: #fff;
+  border: solid 1px #e4e4e4;
+  border-radius: .375rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
 }
