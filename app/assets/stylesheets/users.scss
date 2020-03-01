@@ -60,13 +60,12 @@
 }
 
 .cp_ipcheck {
-	margin: 2em auto;
+	margin: 1em auto;
 	text-align: left;
 }
 .cp_ipcheck ul {
-	margin: 0.5rem 0.5rem 2rem 0.5rem;
-	padding: 0.5rem 1rem;
 	list-style: none;
+	padding-left: 0rem;
 }
 .cp_ipcheck .list_item {
 	margin: 0 0 0.5rem 0;
@@ -120,4 +119,8 @@
 	        transform: rotate(45deg) translateX(-0.25rem) translateY(0.25rem);
 	border-color: #e74c3c;
 	border-right-style: none;
+}
+
+.edit_area {
+	margin: 1rem auto;
 }
