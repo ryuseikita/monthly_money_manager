@@ -13,7 +13,7 @@ class User < ApplicationRecord
                 allow_nil: true
     validates :name,
                 presence: true,
-                length: { maximum: 30 }
+                length: { maximum: 15 }
     validates :email,
                 presence: true,
                 length: { maximum: 255 },
