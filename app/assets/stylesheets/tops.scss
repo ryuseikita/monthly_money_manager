@@ -1,3 +1,29 @@
 // Place all the styles related to the tops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  min-height: 100%;
+ 
+  /* フッタの高さと等しいネガティブマージン */
+  /* また最後の子要素の潜在的なマージンとしても機能 */
+  margin-bottom: -50px;
+}
+.footer,
+.push {
+  height: 50px;
+  padding-top: 10px;
+  color: white;
+}
+
+.bg-dark{
+ background-color: #7D7D7F;
+}
+
+.wrapper .container .title{
+  color: #F5B428;
+}
