@@ -12,9 +12,13 @@
       <tbody>
         <% @users.each do |user| %>
             <tr>
-                <td><%= user.name =%></td>
-                <td><%= user.email =%></td>
-                <td>ボタン予定</td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td>
+                  <div id="change_botton<%= user.id %>">
+                    <%= render 'change_botton', user: user %>
+                  </div>
+                </td>
             </tr>
         <% end %>
         </tbody>

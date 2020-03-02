@@ -1,0 +1,1 @@
+$("#change_botton<%= @user.id %>").html("<%= escape_javascript(render partial: 'admin/users/change_botton', locals: { user: @user } ) %>")

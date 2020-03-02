@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   end
   resources :users
   namespace :admin do
-    resources :users
+    resources :users, only: [:index] do
+      collection do
+        post 'comment_authority'
+      end
+    end
   end
   resources :permanths do
     collection do

@@ -1,0 +1,5 @@
+<% if user.comment_flag %>
+  <%= link_to '無効', comment_authority_admin_users_path(user_id: user.id), user_id: user.id, method: :post, data: { confirm: '本当に有効にしますか?' }, remote: true, class: 'btn btn-danger btn-sm' %>
+<% else %>
+  <%= link_to '許可', comment_authority_admin_users_path,  method: :post, data: { confirm: '本当に無効にしますか?' }, remote: true, class: 'btn btn-primary btn-sm' %>
+<% end %>
