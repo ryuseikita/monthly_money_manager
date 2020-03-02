@@ -10,7 +10,7 @@ class Admin::UsersController < ApplicationController
 		if @user.comment_flag
 			@user.comment_flag = false
 		else
-			@ser.comment_flag = true
+			@user.comment_flag = true
 		end
 		@user.save!
 	end
@@ -18,6 +18,6 @@ class Admin::UsersController < ApplicationController
 	private
 
 	def admin_user
-				redirect_to permanths_path unless current_user.admin_flag?
+		redirect_to permanths_path unless current_user.admin_flag?
 	end
 end
