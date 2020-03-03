@@ -28,3 +28,5 @@
 .env
 public/icon_uploads/
 public/uploads/*
+
+.vscode
