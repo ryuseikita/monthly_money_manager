@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'tops#index'
-  resources :tops,only: [:index]
+  resources :tops, only: [:index]
   resources :sessions, only: [:new, :create, :destroy]
   resources :services do
     resources :reviews
@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     end
   end
   resources :deliveries
+  resources :resets, only: [:new, :create]
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
