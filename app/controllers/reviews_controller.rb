@@ -6,13 +6,8 @@ class ReviewsController < ApplicationController
     @review = @service.reviews.build(review_params)
     #リファクタリングする
     @review.user_id = current_user.id
-    respond_to do |format|
-      if @review.save
-        format.js { redirect_to service_path(@service)}
-      else
-        format.html { redirect_to service_path(@service), notice: '投稿できませんでした...' }
-      end
-    end
+    @review.save
+    render :index
   end
 
   def destroy

@@ -1,3 +1,9 @@
+<% flash.each do |key, value| %>
+	<div class="alert alert-primary text-center" role="alert">
+			<%= content_tag(:div, value, class: "#{key}") %>
+	</div>
+<% end %>
+
 <div class="mt-3">
   <% reviews.each do |review| %>
     <% if review.id.present? %>
@@ -15,6 +21,16 @@
     <% end %>
 <% end %>
 </div>
+<% if @review.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @review.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
 
