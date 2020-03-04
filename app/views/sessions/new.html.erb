@@ -1,10 +1,12 @@
+<% flash.each do |key, value| %>
+	<div class="alert alert-primary text-center" role="alert">
+			<%= content_tag(:div, value, class: "#{key}") %>
+	</div>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col">
       <h1>ログイン</h1>
-      <% flash.each do |key, value| %>
-          <%= content_tag(:div, value, class: "#{key}") %>
-      <% end %>
       <div class='center-form'>
         <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <div class="form-group">
