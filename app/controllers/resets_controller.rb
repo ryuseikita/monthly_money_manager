@@ -11,7 +11,8 @@ class ResetsController < ApplicationController
       @user.password = new_password
       @user.password_confirmation = new_password
       @user.save!
-      ###飛び先確認
+      ResetPasswordMailer.reset_password(@user,new_password).deliver
+      redirect_to new_session_path, notice: "初期パスワードを送信しました。メールを確認してください。"
     else
     redirect_to new_reset_path, notice: "メールアドレスは登録されていません。。。"
     end
