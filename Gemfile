@@ -5,7 +5,7 @@ ruby '2.6.3'
 
 gem 'rails', '~> 5.2.3'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-gem 'puma', '~> 3.11'
+gem 'unicorn'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
@@ -23,9 +23,9 @@ gem 'dotenv-rails'
 #cron
 gem 'whenever'
 #カレンダー装飾用
-gem "bootstrap4-datetime-picker-rails"
+gem 'bootstrap4-datetime-picker-rails'
 gem 'momentjs-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 #ページネーション
 gem 'kaminari'
 
