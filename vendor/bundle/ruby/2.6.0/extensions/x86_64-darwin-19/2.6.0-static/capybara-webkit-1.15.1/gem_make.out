@@ -1,0 +1,34 @@
+current directory: /Users/suzukiryusei/workspace/monthly_money_manager/vendor/bundle/ruby/2.6.0/gems/capybara-webkit-1.15.1
+/Users/suzukiryusei/.rbenv/versions/2.6.3/bin/ruby -I /Users/suzukiryusei/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20200308-46166-7sva7z.rb extconf.rb
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/suzukiryusei/.rbenv/versions/2.6.3/bin/$(RUBY_BASE_NAME)
+	--with-gl-dir
+	--without-gl-dir
+	--with-gl-include
+	--without-gl-include=${gl-dir}/include
+	--with-gl-lib
+	--without-gl-lib=${gl-dir}/lib
+	--with-zlib-dir
+	--without-zlib-dir
+	--with-zlib-include
+	--without-zlib-include=${zlib-dir}/include
+	--with-zlib-lib
+	--without-zlib-lib=${zlib-dir}/lib
+Command 'qmake ' not available
+
+extconf failed, exit code 1
