@@ -14,12 +14,14 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
   socket: /tmp/mysql.sock
+  host: db
 
 development:
   <<: *default
   database: monthly_money_manager_development
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,6 +29,7 @@ development:
 test:
   <<: *default
   database: monthly_money_manager_test
+  host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,5 +53,5 @@ test:
 production:
   <<: *default
   database: monthly_money_manager_production
-  username: monthly_money_manager
-  password: <%= ENV['MONTHLY_MONEY_MANAGER_DATABASE_PASSWORD'] %>
+#  username: monthly_money_manager
+#  password: <%= ENV['MONTHLY_MONEY_MANAGER_DATABASE_PASSWORD'] %>
