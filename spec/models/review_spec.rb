@@ -6,14 +6,6 @@ RSpec.describe Review, type: :model do
   let!(:review) { FactoryBot.build(:user01_coment ,user_id: user.id, service_id: service.id) }
   describe "レビューのコメントの" do
     context "投稿時に" do
-      it "user_idが空だった場合、NG" do
-        review.user_id = " "
-        expect(review).to_not be_valid
-      end
-      it "service_idが空だった場合、NG" do
-        review.service_id = " "
-        expect(review).to_not be_valid
-      end
       it "コメントが空だった場合、NG" do
         review.comment = " "
         expect(review).to_not be_valid
