@@ -54,7 +54,7 @@ end
 
 group :test do
   gem 'puma'
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'webdrivers'
 end
 
