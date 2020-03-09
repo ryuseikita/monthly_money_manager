@@ -35,12 +35,9 @@ end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  RSpec.configure do |config|
-    # ...
-    config.before(:each) do |example|
-      if example.metadata[:type] == :system
-        #driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1400]
-      end
+  config.before(:each) do |example|
+    if example.metadata[:type] == :system
+      #driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1400]
     end
   end
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
