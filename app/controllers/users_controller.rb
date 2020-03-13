@@ -23,10 +23,10 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to permanths_path, notice: "userを編集しました！" }
+        format.html { redirect_to permanths_path, notice: "設定を保存しました。" }
         format.js { render :edit }
       else
-        format.html { render 'edit' }
+        format.html { redirect_to permanths_path, notice: "編集できませんでした。。。" }
         format.js { render 'edit' }
       end
     end

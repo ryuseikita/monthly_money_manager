@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col"></div>
-    <div class="col-lg-6">
-        <h1>サブスクリプションの登録</h1>
+    <div class="col-6">
+        <h1 class='py-4'>サブスクリプションの登録</h1>
         <% if @service.errors.any? %>
           <h2><%= @service.errors.count %>件のエラーがあります。</h2>
         <ul>
@@ -31,7 +31,9 @@
             </div>
             <%= form.submit "登録" ,class:'btn btn-primary' %>
           <% end %>
-        <%= link_to "一覧画面にもどる", services_path %>
+          <div class='pt-3'>
+            <%= link_to "一覧画面にもどる", services_path %>
+          </div>
         </div>
     </div>
     <div class="col"></div>

@@ -5,8 +5,9 @@
 <% end %>
 <div class="container">
   <div class="row">
-    <div class="col">
-      <h1>ログイン</h1>
+    <div class="col"></div>
+    <div class="col-6">
+    <h1 class='py-4'>ログイン</h1>
       <div class='center-form'>
         <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <div class="form-group">
@@ -24,6 +25,8 @@
           <p><%= link_to "新しいアカウントの作成", new_user_path %></p>
           <p><%= link_to "パスワードリセット", new_reset_path %></p>
         </div>
+      </div>
+      <div class="col"></div>
       </div>
   </div>
 </div>
