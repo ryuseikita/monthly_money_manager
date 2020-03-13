@@ -16,12 +16,12 @@ default: &default
   username: root
   password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
   socket: /tmp/mysql.sock
-  host: db
+  host: <%= ENV['DB_HOST'] %>
 
 development:
   <<: *default
   database: monthly_money_manager_development
-  host: localhost
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,7 +29,6 @@ development:
 test:
   <<: *default
   database: monthly_money_manager_test
-  host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

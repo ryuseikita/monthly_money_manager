@@ -23,6 +23,7 @@
                       <div class='form-group'>
                         <%= form.label "変更するパスワード" %>
                         <%= form.password_field :password,class:'form-control' %>
+                        <small class="text-muted">６文字以上の英数字で登録してください。</small>
                       </div>
                       <div class='form-group'>
                         <%= form.label "確認用パスワード" %>
@@ -41,7 +42,7 @@
                         </div>
                           <%= image_tag @user.icon.to_s ,width:'50%' ,class:'img-thumbnail' %>
                         <div class='form-group'>
-                          <%= form.label "変更" %>
+                          <%= form.label "アイコン画像" %>
                           <%= form.file_field :icon ,class:'form-control' %>
                         </div>
 
