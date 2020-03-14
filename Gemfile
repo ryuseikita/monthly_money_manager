@@ -28,6 +28,7 @@ gem 'momentjs-rails'
 gem 'font-awesome-rails'
 #ページネーション
 gem 'kaminari'
+gem 'aws-ses', '~> 0.6'
 
 
 

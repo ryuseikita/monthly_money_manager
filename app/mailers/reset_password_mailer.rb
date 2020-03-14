@@ -1,5 +1,5 @@
 class ResetPasswordMailer < ApplicationMailer
-  default from: 'monthly_monery_manager@example.com'
+  default from: 'monthly_monery_manager@belldra.com'
     layout 'mailer'
     def reset_password(user,password)
         @user = user

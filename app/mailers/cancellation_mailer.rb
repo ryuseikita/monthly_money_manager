@@ -1,5 +1,5 @@
 class CancellationMailer < ApplicationMailer
-  default from: 'monthly_monery_manager@example.com'
+  default from: 'monthly_monery_manager@belldra.com'
     layout 'mailer'
     def cancellation_email(permanth)
         @service = permanth.service.name
