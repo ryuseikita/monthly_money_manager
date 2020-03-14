@@ -15,6 +15,10 @@ class Admin::UsersController < ApplicationController
 		@user.save!
 	end
 
+	def search
+    @users = User.where("email LIKE ?", "%#{params[:search]}%")
+  end
+
 	private
 
 	def admin_user

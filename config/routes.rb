@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :tops, only: [:index]
   resources :sessions, only: [:new, :create, :destroy]
   resources :services do
+    collection do
+      post 'search'
+    end
     resources :reviews
   end
   resources :users
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index] do
       collection do
         post 'comment_authority'
+        post 'search'
       end
     end
   end

@@ -1,28 +1,16 @@
 <div class="container">
   <div class='col'>
     <h1>管理画面：ユーザ一覧</h1>
-    <table class='table tablestriped table-hover'>
-      <thead>
-        <tr class='table-active'>
-            <th scope='row'>名前</td>
-            <th scope='row'>メールアドレス</td>
-            <th scope='row'>コメント有無</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |user| %>
-            <tr>
-                <td><%= user.name %></td>
-                <td><%= user.email %></td>
-                <td>
-                  <div id="change_botton<%= user.id %>">
-                    <%= render 'change_botton', user: user %>
-                  </div>
-                </td>
-            </tr>
-        <% end %>
-        </tbody>
-    </table>
-    <%= paginate @users %>
+    <div class='pb-3'>
+      <a>メールアドレスを入力してください。</a>
+      <%= form_tag( {url: 'search_admin_users', action: :search},id: :fs, remote: true) do %>
+          <%= text_field_tag :search %>
+          <%= submit_tag "検索" %>
+      <% end %>
+    </div>
+    <div id="index_area">
+      <%= render partial: 'admin/users/search_user', locals: { users: @users } %>
+    </div>
+      <%= paginate @users %>
   </div>
 </div>
