@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>設定</h1>
+  <h1 class='py-4 l-2'>設定</h1>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= @user.errors.count %>件のエラーがあります。</h2>
@@ -40,7 +40,7 @@
                           <%= form.label "ユーザネーム" %>
                           <%= form.text_field :name,class:'form-control' %>
                         </div>
-                          <%= image_tag @user.icon.to_s ,width:'50%' ,class:'img-thumbnail' %>
+                          <%= image_tag @user.icon.to_s ,class:'img-thumbnail my-2'%>
                         <div class='form-group'>
                           <%= form.label "アイコン画像" %>
                           <%= form.file_field :icon ,class:'form-control' %>
