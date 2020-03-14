@@ -27,7 +27,7 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <% if logged_in? %>
-                <%= link_to @current_user.name, edit_user_path(current_user.id) ,class: "nav-link"%>
+                <%= link_to @current_user.name, permanths_path ,class: "nav-link"%>
               <%elsif%>
                 <%= link_to "ログイン", new_session_path,class: "nav-link"%>
               <% end %>
@@ -38,6 +38,7 @@
                   menu
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to "設定", edit_user_path(current_user.id) ,class: "dropdown-item"%>
                   <%= link_to "サービス一覧", services_path ,class: "dropdown-item"%>
                   <% if admin?%>
                     <%= link_to "ユーザ管理", admin_users_path ,class: "dropdown-item" %>
