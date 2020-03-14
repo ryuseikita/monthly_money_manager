@@ -28,6 +28,10 @@ class ServicesController < ApplicationController
     redirect_to services_path,notice:"既存サービスを削除しました"
   end
 
+  def search
+    @services = Service.where("name LIKE ?", "%#{params[:search]}%")
+  end
+
   private
 
   def service_params
