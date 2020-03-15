@@ -17,7 +17,22 @@
 					</div>
 				</div>
 				<%= link_to '加入サービス追加', new_permanth_path ,class:"btn btn-outline-primary d-block d-lg-inline-block my-3 mb-lg-0" %>
+
+					<div class='pt-5'>
+					<a>メール送信</a>
+      		<%= form_tag( {action: :mail },id: :fs, remote: false) do %>
+					<div class="form-group">
+					<small class="text-muted ">受信可能なメールアドレスを入力してください　</small>
+          <%= email_field_tag :email, "" ,{placeholder: "xxx@example.com", class: 'form-control'} %>
+					<%= hidden_field_tag :sum, @sum %>
+					</div>
+          <%= submit_tag "送信" %>
+      		<% end %>
+					</div>
 		</div>
+
+
+
 		<div class='col-md-12 col-lg-10'>
 			<div class='row'>
 				<% @permanths.each do |permanth| %>

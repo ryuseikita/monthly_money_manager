@@ -2,7 +2,7 @@
 <h1 class='py-3'>サブスクリプション一覧</h1>
 <div class='pb-3'>
     <div class="form-group">
-      <%= form_tag( {url: 'search_service', action: :search},id: :fs, remote: true) do %>
+      <%= form_tag( {action: :search},id: :fs, remote: true) do %>
           <small class="text-muted">名前で検索できます。</small><br>
           <%= text_field_tag :search %>
           <%= submit_tag "検索" %>

@@ -25,6 +25,11 @@ class PermanthsController < ApplicationController
     @services = Service.where("name LIKE ?", "%#{params[:search]}%")
   end
 
+  def mail
+    PermanthMailer.permanth_test_email(current_user,params[:sum],params[:email],).deliver
+    redirect_to permanths_path, notice: "メールを送信しました！"
+  end
+
   def destroy
     @permanth.destroy
     redirect_to permanths_path,notice:"投稿を削除しました！"

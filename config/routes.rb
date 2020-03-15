@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :permanths do
     collection do
       post 'search'
+      post 'mail'
     end
   end
   resources :deliveries
