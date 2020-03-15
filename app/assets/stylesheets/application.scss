@@ -15,5 +15,5 @@
  */
  @import "bootstrap";
  @import "font-awesome";
- //本番環境にて、カレンダーのCSSが反映されない不具合があるためコメントアウト
- //@import "tempusdominus-bootstrap-4.css";
+ //本番環境にて、カレンダーのCSSが反映されない
+ @import "tempusdominus-bootstrap-4.css";
