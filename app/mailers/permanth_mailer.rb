@@ -1,5 +1,4 @@
 class PermanthMailer < ApplicationMailer
-    default from: 'monthly_monery_manager@belldra.com'
     layout 'mailer'
     def permanth_email(user,sum)
         @user = user
