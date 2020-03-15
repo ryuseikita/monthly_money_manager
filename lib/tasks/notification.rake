@@ -1,7 +1,8 @@
 namespace :notification do
   desc "月額金額のメール通知"
   task permanth_money: :environment do
-    @users = User.all
+    ### テストユーザには通知しない。
+    @users = User.where.not("email LIKE '%example%'" )
     @users.each do |user|
       permanths = user.permanths
       @sum=0
@@ -14,9 +15,12 @@ namespace :notification do
 
   desc "解約予定日の通知"
   task cancellation_service: :environment do
-    @permanth = Permanth.all.where(cancellation: Date.today+1 )
-    @permanth.each do |permanth|
-      CancellationMailer.cancellation_email(permanth).deliver
+    @users = User.where.not("email LIKE '%example%'" )
+    @users.each do |user|
+      @permanth = user.permanths.where(cancellation: Date.today+1 )
+      @permanth.each do |permanth|
+        CancellationMailer.cancellation_email(permanth).deliver
+      end
     end
   end
 end
