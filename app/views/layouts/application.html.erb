@@ -19,9 +19,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar-content">
           <ul class="navbar-nav mr-auto">　
-            <li class="nav-item ">
-              <%= link_to "加入サービス登録", new_permanth_path ,class: "nav-link"%>
-            </li>
+            <% if logged_in? %>
+              <li class="nav-item ">
+                <%= link_to "加入サービス登録", new_permanth_path ,class: "nav-link"%>
+              </li>
+            <% end %>
           </ul>
 
           <ul class="navbar-nav">
@@ -40,8 +42,8 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <%= link_to "設定", edit_user_path(current_user.id) ,class: "dropdown-item"%>
                   <%= link_to "サービス一覧", services_path ,class: "dropdown-item"%>
-                  <div class="dropdown-divider"></div>
                   <% if admin?%>
+                    <div class="dropdown-divider"></div>
                     <%= link_to "ユーザ管理", admin_users_path ,class: "dropdown-item" %>
                     <%= link_to "サブスク登録", new_service_path ,class: "dropdown-item" %>
                   <% end %>

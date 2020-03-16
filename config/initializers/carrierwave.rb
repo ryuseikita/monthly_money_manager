@@ -21,7 +21,7 @@ CarrierWave.configure do |config|
       config.fog_directory = 'monthly-money-manager'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/monthly-money-manager'
     when 'development'
-      config.fog_directory = 'monthly-money-manager'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/monthly-money-manager'
+      config.cache_storage = :file
+      config.storage :file
   end
 end
