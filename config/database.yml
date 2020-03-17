@@ -16,11 +16,12 @@ default: &default
   username: root
   password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
   socket: /tmp/mysql.sock
-  host: <%= ENV['DB_HOST'] %>
+  host: localhost
 
 development:
   <<: *default
   database: monthly_money_manager_development
+  host: <%= ENV['DB_HOST'] %>
 
 
 # Warning: The database defined as "test" will be erased and

@@ -4,12 +4,14 @@ services:
     build:
       context: .
       dockerfile: ./docker/rails/Dockerfile
-    command: bundle exec unicorn -p 3000 -c /app/config/unicorn.rb
+    command: bundle exec unicorn -p 3000 -c /www/app/config/unicorn.rb
+    environment:
+      DB_HOST: db
     ports:
       - '3000:3000'
     volumes:
       - /var/tmp
-      - .:/app
+      - .:/www/app
     depends_on:
       - db
     extends:
