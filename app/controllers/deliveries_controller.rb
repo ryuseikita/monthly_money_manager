@@ -3,7 +3,7 @@ class DeliveriesController < ApplicationController
 
   def update
     if @delivery.update(delivery_params)
-        redirect_to permanths_path, notice: "userを編集しました！" 
+        redirect_to permanths_path, notice: "プロファイルを編集しました！" 
     else
         redirect_to edit_user_path(@delivery.user_id)
     end
