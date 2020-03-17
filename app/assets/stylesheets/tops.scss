@@ -38,3 +38,30 @@ html, body {
   margin-right: auto;
   padding: 2rem;
 }
+
+.jumbotron {
+  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .2)), url("/assets/top.jpg");
+  background-size: cover;
+  background-position: center 80%;
+  height:700px;
+}
+
+.top_font{
+  color:white;
+}
+
+.btn-gradient-radius {
+  display: inline-block;
+  margin-top: 100px;
+  padding: 8px 120px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  transition: .4s;
+  font-size:20px;
+}
+
+.btn-gradient-radius:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
