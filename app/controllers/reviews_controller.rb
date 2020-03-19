@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :login_check
   before_action :set_review,only:[:destroy,:edit,:update]
 
   def create

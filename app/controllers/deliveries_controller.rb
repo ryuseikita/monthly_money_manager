@@ -1,4 +1,5 @@
 class DeliveriesController < ApplicationController
+  before_action :login_check
   before_action :set_delivery,only:[:update]
 
   def update

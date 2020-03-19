@@ -7,6 +7,26 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      user: ユーザー
+      service: サービス
+      seview: レビュー
+      permanth: サービス登録
+      service: サービス名
+    attributes:
+      user:
+        name: ユーザーネーム
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        admin_flag: 管理者フラグ
+      permanth:
+        service: 加入しているサービス
+      service:
+        name: 名前
+        money: 金額
+        details : 概要
+        icon: アイコン
   date:
     abbr_day_names:
     - 日

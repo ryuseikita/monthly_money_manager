@@ -16,7 +16,7 @@
         <div class='center-form'>
           <%= form_with(model: @user, local: true)  do |f| %>
             <div class="form-group">
-                <%= f.label :ユーザーネーム %>
+                <%= f.label :name %>
                 <%= f.text_field :name,class:'form-control'%>
             </div>
             <div class="form-group">
@@ -24,12 +24,12 @@
                 <%= f.email_field :email,class:'form-control' %>
             </div>
             <div class="form-group">
-                <%= f.label :パスワード %>
+                <%= f.label :password %>
                 <%= f.password_field :password,class:'form-control' %>
                 <small class="text-muted">６文字以上の英数字で登録してください。</small>
             </div>
             <div class="form-group">
-                <%= f.label :確認用パスワード %>
+                <%= f.label :password_confirmation %>
                 <%= f.password_field :password_confirmation,class:'form-control' %>
                 <small class="text-muted">パスワードと同じものを入力してください。</small>
             </div>

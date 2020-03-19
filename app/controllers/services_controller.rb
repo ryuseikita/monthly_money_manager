@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_action :login_check
   before_action :set_service,only:[:show,:destroy]
 
   def index

@@ -7,6 +7,10 @@ module ApplicationHelper
         current_user.present?
       end
 
+      def login_check
+        return redirect_to new_session_path unless logged_in?
+      end
+
       def admin?
         current_user.admin_flag
       end

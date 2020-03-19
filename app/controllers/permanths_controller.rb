@@ -1,6 +1,7 @@
 class PermanthsController < ApplicationController
   #before_action :set_permanth,only:[:show,:edit,:update,:destroy]
   before_action :set_permanth,only:[:destroy]
+  before_action :login_check
 
   def index
     @permanths = Permanth.where(user_id: current_user.id)
@@ -15,9 +16,10 @@ class PermanthsController < ApplicationController
   def create
     @permanth = current_user.permanths.build(permanth_params)
     if @permanth.save
-     redirect_to permanths_path, notice: "登録しました！"
+      redirect_to permanths_path, notice: "登録しました！"
     else
-     render 'new'
+      @permanth.errors.messages.delete(:service_id)
+      render 'new'
     end
   end
 

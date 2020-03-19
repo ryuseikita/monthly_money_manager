@@ -1,8 +1,15 @@
-<% flash.each do |key, value| %>
-	<div class="alert alert-primary text-center" role="alert">
-			<%= content_tag(:div, value, class: "#{key}") %>
+
+  <%if flash[:danger].present? %>
+    <div class="alert alert-danger text-center" role="alert">
+  <% elsif flash[:notice].present? %>
+    <div class="alert alert-primary text-center" role="alert">
+  <% else %>
+    <div>
+  <% end %>
+    <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
 	</div>
-<% end %>
 <div class="container">
   <div class="row">
     <div class="col"></div>
@@ -11,11 +18,11 @@
       <div class='center-form'>
         <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <div class="form-group">
-          <%= f.label :email %>
+          <%= f.label :メールアドレス %>
           <%= f.email_field :email ,class:'form-control'%>
         </div>
         <div class="form-group">
-          <%= f.label :password %>
+          <%= f.label :パスワード %>
           <%= f.password_field :password ,class:'form-control'%>
         </div>
         <div class="form-group">
