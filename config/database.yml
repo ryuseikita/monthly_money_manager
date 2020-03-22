@@ -53,5 +53,6 @@ test:
 production:
   <<: *default
   database: monthly_money_manager_production
-#  username: monthly_money_manager
-#  password: <%= ENV['MONTHLY_MONEY_MANAGER_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['MONTHLY_MONEY_MANAGER_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
