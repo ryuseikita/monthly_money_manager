@@ -6,11 +6,11 @@ RUN apt-get update -qq && \
                        nodejs \
                        default-mysql-client
 RUN gem install bundler
-RUN mkdir -p /www/app
-WORKDIR /www/app
-ADD Gemfile /www/app/Gemfile
-ADD Gemfile.lock /www/app/Gemfile.lock
+RUN mkdir -p /app
+WORKDIR /app
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
 RUN bundle install -j4
-ADD . /www/app
+ADD . /app
 
 EXPOSE 3000
