@@ -1,4 +1,4 @@
-worker_processes 1
+worker_processes 2
 
 pid "/var/run/unicorn.pid"
 listen "/var/tmp/unicorn.sock"
