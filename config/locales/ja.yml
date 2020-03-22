@@ -22,6 +22,9 @@ ja:
         admin_flag: 管理者フラグ
       permanth:
         service: 加入しているサービス
+        registration: 加入日
+        cancellation: 解約予定日
+
       service:
         name: 名前
         money: 金額

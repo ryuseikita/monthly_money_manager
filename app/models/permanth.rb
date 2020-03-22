@@ -10,7 +10,9 @@ class Permanth < ApplicationRecord
 
   def cancellation_vaild
     if cancellation.present?
-      errors.add(:cancellation, 'は翌日以降日付を入力してください') if cancellation < Date.today
+      if cancellation < Date.today
+        errors.add(:cancellation, 'は翌日以降日付を入力してください')
+      end
     end
   end
 end

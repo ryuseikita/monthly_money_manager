@@ -19,6 +19,8 @@ class PermanthsController < ApplicationController
       redirect_to permanths_path, notice: "登録しました！"
     else
       @permanth.errors.messages.delete(:service_id)
+      @permanth.registration=""
+      @permanth.cancellation=""
       render 'new'
     end
   end
