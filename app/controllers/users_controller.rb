@@ -2,7 +2,11 @@ class UsersController < ApplicationController
   before_action :set_user,only:[:edit,:update]
 
   def new
+    if logged_in?
+      redirect_to permanths_path
+    else
       @user = User.new
+    end
   end
 
   def create
