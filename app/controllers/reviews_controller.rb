@@ -19,6 +19,12 @@ class ReviewsController < ApplicationController
     redirect_to service_path(params[:service_id])
   end
 
+  def update
+    @review.update(review_params)
+    @service = Service.find(@review.service_id)
+    render :index
+  end
+
   private
 
   def review_params
