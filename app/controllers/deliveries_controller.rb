@@ -4,7 +4,7 @@ class DeliveriesController < ApplicationController
 
   def update
     if @delivery.update(delivery_params)
-        redirect_to permanths_path, notice: "プロファイルを編集しました！" 
+        redirect_to permanths_path, notice: "プロファイルを編集しました！"
     else
         redirect_to edit_user_path(@delivery.user_id)
     end
@@ -17,6 +17,6 @@ class DeliveriesController < ApplicationController
   end
 
   def set_delivery
-      @delivery = Delivery.find(current_user.id)
+      @delivery = Delivery.find_by(user_id:current_user.id)
   end
 end
