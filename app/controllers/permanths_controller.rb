@@ -5,7 +5,6 @@ class PermanthsController < ApplicationController
 
   def index
     @permanths = Permanth.where(user_id: current_user.id)
-    @services = Service.all
     @sum = user_money(@permanths)
   end
 
