@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :permanths
     has_many :reviews
     has_one :delivery
+    has_many :user_services
     mount_uploader :icon, IconUploader
 
     before_validation { email.downcase! }

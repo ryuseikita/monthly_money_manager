@@ -5,6 +5,7 @@ CSV.foreach('db/csv/service_index.csv', headers: true) do |row|
     name: row['name'],
     money: row['money'],
     details: row['details'],
+    user_id: row['user_id']
   )
 end
 
