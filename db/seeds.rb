@@ -25,6 +25,8 @@ Delivery.create!(user_id: 2
                 password:               password,
                 password_confirmation:  password
                 )
+    Delivery.create!(user_id: "#{n+2}"
+                )
 end
 
 
