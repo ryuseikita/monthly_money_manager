@@ -9,7 +9,8 @@ services:
       - '3000:3000'
     volumes:
       - /var/tmp
-      - monthly_money_manager:/app/log
+      - /var/log/monthly_money_manager:/app/log
+      - /app/public
     environment:
       RAILS_ENV: production
   nginx:
