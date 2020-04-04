@@ -6,7 +6,7 @@
           <label>
           <div class="row">
           <div class="col-2">
-          <input type="radio" class="option-input" name="radio_group" value=<%= service.id %> >
+          <input type="radio" class="option-input" name="radio_group" value=<%= service.id %>>
           </div>
             <div class="col-5">
               <p><%= service.name %></p>
@@ -21,7 +21,6 @@
       </ul>
   </div>
 <% else%>
-      <ul>
-          <p>該当が存在しません。</p>
-      </ul>
+  <p>アプリに登録がありませんでした。</p>
+  <p>加入しているサービスの<br>名前と金額を自分で作成する必要があります</p>
 <% end %>

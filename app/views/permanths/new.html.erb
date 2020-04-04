@@ -15,7 +15,7 @@
       </ul>
     <% end %>
     <div class='center-form'>
-    <div class='pb-3'>
+    <div class='pt-3'>
       <a>加入しているサービスを検索してください。</a>
       <%= form_tag( {url: 'search_permanths', action: :search},id: :fs, remote: true) do %>
           <%= text_field_tag :search %>
@@ -23,15 +23,33 @@
       <% end %>
     </div>
         <div id="search_result"></div>
+        <div id="new_service" class='py-3'>
+          <button type="button" class="btn btn-info btn-sm my-3" data-toggle="collapse" data-target="#new_service_form">登録するサービスを作成する</button>
+          <div id="new_service_form"  class="collapse">
+            <div class='center-form border-warning'>
+              <%= form_with(model: Service.new, controller: ServicesController, remote: true) do |form| %>
+                  <div class="form-group row">
+                      <%= form.label :name, class:'col-sm-2 col-form-label'%>
+                      <%= form.text_field :name ,class:'form-control col-sm-10', placeholder: "例：Apple"%>
+                    </div>
+                    <div class="form-group row">
+                      <%= form.label :money, class:'col-sm-2 col-form-label'%>
+                      <%= form.text_field :money ,class:'form-control col-sm-10', placeholder: "例：10000" %>
+                    </div>
+                    <%= form.submit "作成", class:'btn btn-primary'%>
+              <% end %>
+            </div>
+          </div>
+        </div>
           <%= form_with(model: @permanth, local: true ) do |form| %>
               <%= form.hidden_field :service_id %>
               <div class="form-group">
-                  <%= form.label :"registration" %>
-                  <%= form.text_field :registration ,class:'form-control datetimepicker-input', id: "registration", data: {toggle: "datetimepicker", target: "#registration"} %>
+                  <%= form.label :registration %>
+                  <%= form.text_field :registration ,class:'form-control datetimepicker-input', id: "registration", placeholder: "例：YYYY/DD/MM", data: {toggle: "datetimepicker", target: "#registration"} %>
               </div>
               <div class="form-group">
-                  <%= form.label :"cancellation" %>
-                  <%= form.text_field :cancellation ,class:'form-control datetimepicker-input', id: "cancellation", data: {toggle: "datetimepicker", target: "#cancellation"} %>
+                  <%= form.label :cancellation %>
+                  <%= form.text_field :cancellation ,class:'form-control datetimepicker-input', id: "cancellation", placeholder: "例：YYYY/DD/MM", data: {toggle: "datetimepicker", target: "#cancellation"} %>
               </div>
                   <%= form.submit "登録", class:'btn btn-primary'%>
           <% end %>

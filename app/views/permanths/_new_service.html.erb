@@ -1,0 +1,26 @@
+<% if new_services.present? %>
+  <div class="cp_ipradio">
+      <ul>
+        <li class="list_item">
+        <label>
+          <div class="row">
+          <div class="col-2">
+          <input type="radio" class="option-input" name="radio_group" value=<%= new_services.id %> checked >
+          </div>
+            <div class="col-5">
+              <p><%= new_services.name %></p>
+            </div>
+            <div class="col-5">
+              <p>￥<%= new_services.money %></p>
+            </div>
+          </div>
+        </label>
+        </li>
+      </ul>
+  </div>
+  <%= link_to '取り消す', service_path(new_services.id, flag:"permanths"), method: :delete, class: 'btn btn-danger btn-sm' %>
+<% else%>
+  <ul>
+      <p>登録できませんでした。</p>
+  </ul>
+<% end %>

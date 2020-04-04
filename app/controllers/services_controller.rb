@@ -3,7 +3,7 @@ class ServicesController < ApplicationController
   before_action :set_service,only:[:show,:destroy]
 
   def index
-    @services = Service.all
+    @services = Service.where(user_id: 1)
   end
 
   def show
@@ -16,21 +16,32 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @service = Service.new(service_params)
-    if @service.save
-     redirect_to services_path, notice: "登録しました"
-    else
-     render 'new'
+    @service = current_user.services.build(service_params)
+    respond_to do |format|
+      if @service.save
+        format.html { redirect_to services_path, notice: "登録しました"}
+        format.js { render new_permanth_path }
+      else
+        format.html { render 'new' }
+        format.js { render new_permanth_path }
+      end
     end
   end
 
   def destroy
-    @service.destroy
-    redirect_to services_path,notice:"既存サービスを削除しました"
+    if params[:flag]=="permanths" && @service.user_id==current_user.id
+      @service.destroy
+      redirect_to new_permanth_path
+    elsif admin?
+      @service.destroy
+      redirect_to services_path,notice:"既存サービスを削除しました"
+    else
+      redirect_to tops_path
+    end
   end
 
   def search
-    @services = Service.where("name LIKE ?", "%#{params[:search]}%")
+    @services = Service.where("user_id = ? && name LIKE ?", 1,"%#{params[:search]}%")
   end
 
   private
