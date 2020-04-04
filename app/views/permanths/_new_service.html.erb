@@ -1,4 +1,13 @@
-<% if new_services.present? %>
+<% if new_services.errors.any? %>
+  <p>登録できませんでした。</p>
+  <h2><%= new_services.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% new_services.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <%= render partial: 'permanths/new_service_form' %>
+<% else%>
   <div class="cp_ipradio">
       <ul>
         <li class="list_item">
@@ -19,8 +28,4 @@
       </ul>
   </div>
   <%= link_to '取り消す', service_path(new_services.id, flag:"permanths"), method: :delete, class: 'btn btn-danger btn-sm' %>
-<% else%>
-  <ul>
-      <p>登録できませんでした。</p>
-  </ul>
 <% end %>

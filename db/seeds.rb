@@ -1,14 +1,5 @@
 require "csv"
 
-CSV.foreach('db/csv/service_index.csv', headers: true) do |row|
-  Service.create(
-    name: row['name'],
-    money: row['money'],
-    details: row['details'],
-    user_id: row['user_id']
-  )
-end
-
 User.create!(name: 'admin',
                email: 'admin@example.com',
                password: 'password',
@@ -34,6 +25,16 @@ Delivery.create!(user_id: 2
                 password:               password,
                 password_confirmation:  password
                 )
+end
+
+
+CSV.foreach('db/csv/service_index.csv', headers: true) do |row|
+  Service.create(
+    name: row['name'],
+    money: row['money'],
+    details: row['details'],
+    user_id: row['user_id']
+  )
 end
 
 100.times do |n|

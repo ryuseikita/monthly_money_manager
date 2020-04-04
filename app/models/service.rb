@@ -5,7 +5,8 @@ class Service < ApplicationRecord
     mount_uploader :icon, ServiceIconUploader
 
     validates  :name,
-                presence: true
+                presence: true,
+                length: { maximum: 30 }
     validates  :user_id,
                 presence: true
 end
