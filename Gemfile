@@ -29,6 +29,8 @@ gem 'font-awesome-rails'
 #ページネーション
 gem 'kaminari'
 gem 'aws-sdk-rails'
+gem 'factory_bot_rails'
+gem 'faker'
 
 
 
@@ -40,8 +42,6 @@ group :development, :test do
   gem 'letter_opener_web'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'launchy'
   gem 'database_cleaner'
 end
