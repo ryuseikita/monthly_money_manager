@@ -1,6 +1,7 @@
 class Permanth < ApplicationRecord
   belongs_to :user
   belongs_to :service
+  has_many :services
 
   validates  :user_id,
                 presence: true

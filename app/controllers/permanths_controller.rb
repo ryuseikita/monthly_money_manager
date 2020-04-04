@@ -5,7 +5,6 @@ class PermanthsController < ApplicationController
 
   def index
     @permanths = Permanth.where(user_id: current_user.id)
-    @services = Service.all
     @sum = user_money(@permanths)
   end
 
@@ -21,12 +20,13 @@ class PermanthsController < ApplicationController
       @permanth.errors.messages.delete(:service_id)
       @permanth.registration=""
       @permanth.cancellation=""
+      @service = Service.new
       render 'new'
     end
   end
 
   def search
-    @services = Service.where("name LIKE ?", "%#{params[:search]}%")
+    @services = Service.where("user_id = ? && name LIKE ?", 1,"%#{params[:search]}%")
   end
 
   def mail
