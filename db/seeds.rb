@@ -25,6 +25,8 @@ Delivery.create!(user_id: 2
                 password:               password,
                 password_confirmation:  password
                 )
+    Delivery.create!(user_id: "#{n+2}"
+                )
 end
 
 
@@ -40,11 +42,11 @@ end
 100.times do |n|
   number = "#{rand(3)+1}"
   if number == "1"
-    tmp = "高い"
+    tmp = "高い(テスト)"
   elsif number == "2"
-    tmp = "安い"
+    tmp = "安い(テスト)"
   else
-    tmp = "いいね！"
+    tmp = "いいね！(テスト)"
   end
   comment = tmp
   user_id = "#{rand(20)+3}"
