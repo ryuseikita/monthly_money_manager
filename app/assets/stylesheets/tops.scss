@@ -68,26 +68,24 @@ html, body {
 
 @media (min-width: 100px) {
 
-  html {
-    font-size: 10px
+  html .display-4, html h1 {
+    font-size: 2.5rem;
   }
 
 }
 
+@media (min-width: 500px) {
 
-@media (min-width: 768px) {
-
-  html {
-    font-size: 12px
+  html .display-4 {
+    font-size: 3rem;
   }
 
 }
 
-
-@media (min-width: 1200px) {
+@media (min-width: 785px) {
 
   html {
-    font-size: 16px
+    font-size: 18px
   }
 
 }
