@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/monthly_money_manager/
+    destination: /var/www/test
 hooks:
   AfterInstall:
     - location: scripts/start_server

@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd /var/www/monthly_money_manager/
-docker-compose -f docker-compose-pro.yml build --no-cache
+#docker-compose -f docker-compose-pro.yml build --no-cache
 docker-compose -f docker-compose-pro.yml up -d
