@@ -8,8 +8,6 @@ permissions:
     owner: rails
     group: rails
     mode: 744
-    type:
-      - directory
 hooks:
   AfterInstall:
     - location: scripts/start_server
