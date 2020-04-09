@@ -2,7 +2,12 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/monthly_money_manager/
+    destination: /var/www/monthly_money_manager
+permissions:
+  - object: /var/www/monthly_money_manager
+    owner: rails
+    group: rails
+    mode: 744
 hooks:
   AfterInstall:
     - location: scripts/start_server
