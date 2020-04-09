@@ -1,4 +1,3 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
-  layout 'mailer'
+  default from: 'Monthly Money Manager <notice@belldra.com>'
 end

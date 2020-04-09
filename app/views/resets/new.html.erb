@@ -1,0 +1,33 @@
+<% flash.each do |key, value| %>
+	<div class="alert alert-warning text-center" role="alert">
+			<%= content_tag(:div, value, class: "#{key}") %>
+	</div>
+<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-lg-6">
+      <h1>パスワードリセット</h1>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+        <div class='center-form'>
+          <%= form_with(model: @user, url:resets_path, local: true)  do |f| %>
+            <div class="form-group">
+                <%= f.label :リセットするアカウントのメールアドレスを入力してください。 %>
+                <%= f.email_field :email,class:'form-control' %>
+            </div>
+            <%= f.submit "送信" ,class:'btn btn-primary'%>
+          <% end %>
+        </div>
+    </div>
+    <div class="col"></div>
+    </div>
+</div>

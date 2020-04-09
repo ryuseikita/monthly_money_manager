@@ -7,9 +7,71 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= favicon_link_tag('favicon.ico') %>
+    <%= favicon_link_tag('favicon.png',
+                     {:rel => 'apple-touch-icon',
+                      :sizes => '180x180',
+                      :type => 'image/png'}) %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark title-back">
+      <div class="container">
+        <%= link_to "Monthly Money Manager", tops_path ,class: "navbar-brand title" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-content">
+          <ul class="navbar-nav mr-auto">　
+            <% if logged_in? %>
+              <li class="nav-item ">
+                <%= link_to "加入サービス登録", new_permanth_path ,class: "nav-link"%>
+              </li>
+            <% end %>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <% if logged_in? %>
+                <%= link_to @current_user.name, permanths_path ,class: "nav-link"%>
+              <%elsif%>
+                <%= link_to "ログイン", new_session_path,class: "nav-link"%>
+              <% end %>
+            </li>
+            <% if logged_in? %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  menu
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to "設定", edit_user_path(current_user.id) ,class: "dropdown-item"%>
+                  <%= link_to "サービス一覧", services_path ,class: "dropdown-item"%>
+                  <% if admin?%>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to "ユーザ管理", admin_users_path ,class: "dropdown-item" %>
+                    <%= link_to "サブスク登録", new_service_path ,class: "dropdown-item" %>
+                  <% end %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to "ログアウト", session_path(current_user.id), method: :delete ,class: "dropdown-item" %>
+                </div>
+              </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <%= yield %>
+    <div class="push"></div>
+    </div>
+    <div class='container-fluid footer-back'>
+      <div class='row'>
+        <div class='col'>
+          <footer class='footer text-center '>©2020 MonthlyMoneyManager All Rights Reserved</footer>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

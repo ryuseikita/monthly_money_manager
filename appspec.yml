@@ -1,0 +1,19 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/monthly_money_manager
+permissions:
+  - object: /var/www/monthly_money_manager
+    owner: rails
+    group: rails
+    mode: 744
+hooks:
+  AfterInstall:
+    - location: scripts/start_server
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root

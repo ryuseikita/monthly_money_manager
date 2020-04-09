@@ -1,0 +1,14 @@
+## 作業途中# :paw_prints: half-work：
+
+## 新規（ファイル）機能追加# :sparkles: add：
+
+##仕様変更# :arrows_clockwise: change：
+## 機能修正（バグではない）# :arrow_heading_up: update：
+## バグ修正# :warning: fix：
+## クリティカルなバグ修正# :no_entry_sign: hotfix：
+
+## 整理（リファクタリング等）# :dizzy: clean：
+
+## 無効化（コメントアウト等）# :zzz: disable：
+## 削除（ファイル）# :boom: remove：
+## 変更取り消し# :leftwards_arrow_with_hook: revert：

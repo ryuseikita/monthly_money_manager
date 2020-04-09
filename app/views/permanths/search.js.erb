@@ -1,0 +1,6 @@
+$('#search_result').html("<%= j(render(:partial => 'search_result', :object => @services))%>")
+
+$('input:radio[name="radio_group"]').change(function() {
+    const str1 = $(this).val();
+    $('#permanth_service_id').val(str1);
+});

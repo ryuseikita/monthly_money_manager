@@ -14,12 +14,15 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
   socket: /tmp/mysql.sock
+  host: localhost
 
 development:
   <<: *default
   database: monthly_money_manager_development
+  host: <%= ENV['DB_HOST'] %>
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -50,5 +53,6 @@ test:
 production:
   <<: *default
   database: monthly_money_manager_production
-  username: monthly_money_manager
+  username: root
   password: <%= ENV['MONTHLY_MONEY_MANAGER_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>

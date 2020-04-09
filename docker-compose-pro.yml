@@ -1,0 +1,23 @@
+version: '2'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/rails/Dockerfile
+    command: bundle exec "rails assets:precompile RAILS_ENV=production  && unicorn -p 3000 -c /app/config/unicorn.rb"
+    ports:
+      - '3000:3000'
+    volumes:
+      - /var/tmp
+      - /var/log/monthly_money_manager:/app/log
+      - /app/public
+    environment:
+      RAILS_ENV: production
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    ports:
+      - '80:80'
+    volumes_from:
+      - app

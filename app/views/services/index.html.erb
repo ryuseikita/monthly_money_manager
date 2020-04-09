@@ -1,0 +1,22 @@
+<% flash.each do |key, value| %>
+	<div class="alert alert-primary text-center" role="alert">
+			<%= content_tag(:div, value, class: "#{key}") %>
+	</div>
+<% end %>
+
+<div class="container">
+<h1 class='py-3'>サブスクリプション一覧</h1>
+<div class='pb-3'>
+    <div class="form-group">
+      <%= form_tag( {action: :search},id: :fs, remote: true) do %>
+          <small class="text-muted">名前で検索できます。</small><br>
+          <%= text_field_tag :search %>
+          <%= submit_tag "検索" %>
+      <% end %>
+      </div>
+</div>
+  <div id='service_index_area'>
+    <%= render partial: 'search_service', locals: { services: @services } %>
+  </div>
+</div>
+

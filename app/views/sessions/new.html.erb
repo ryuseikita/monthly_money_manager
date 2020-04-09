@@ -1,0 +1,40 @@
+
+  <%if flash[:danger].present? %>
+    <div class="alert alert-danger text-center" role="alert">
+  <% elsif flash[:notice].present? %>
+    <div class="alert alert-primary text-center" role="alert">
+  <% else %>
+    <div>
+  <% end %>
+    <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+	</div>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-10 col-lg-6">
+    <h1 class='py-4'>ログイン</h1>
+      <div class='center-form'>
+        <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+        <div class="form-group">
+          <%= f.label :メールアドレス %>
+          <%= f.email_field :email ,class:'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= f.label :パスワード %>
+          <%= f.password_field :password ,class:'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= f.submit "ログイン" ,class:'btn btn-primary'%>
+        </div>
+        <% end %>
+          <p><%= link_to "新しいアカウントの作成", new_user_path %></p>
+          <p><%= link_to "パスワードリセット", new_reset_path %></p>
+        </div>
+      </div>
+      <div class="col"></div>
+      </div>
+  </div>
+</div>
+

@@ -1,0 +1,21 @@
+<table class='table tablestriped table-hover'>
+  <thead>
+    <tr class='table-active'>
+        <th scope='row'>名前</td>
+        <th scope='row'>メールアドレス</td>
+        <th scope='row'>コメント有無</th>
+    </tr>
+    <% users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td>
+          <div id="change_botton<%= user.id %>">
+            <%= render 'change_botton', user: user %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </thead>
+  <tbody>
+</table>

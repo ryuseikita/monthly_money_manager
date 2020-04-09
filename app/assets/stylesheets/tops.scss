@@ -1,0 +1,91 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  min-height: 100%;
+  /* フッタの高さと等しいネガティブマージン */
+  /* また最後の子要素の潜在的なマージンとしても機能 */
+  margin-bottom: -50px;
+  background-color: #F9F9F7;
+}
+.footer,
+.push {
+  height: 50px;
+  padding-top: 10px;
+  color: white;
+}
+
+.title-back,
+.footer-back{
+ background-color: #5a5a5a;
+}
+
+.wrapper .container .title{
+  color: #F5B428;
+}
+
+.center-form {
+  background-color: #fff;
+  border: solid 1px #e4e4e4;
+  border-radius: .375rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+}
+
+.jumbotron {
+  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), image-url("top.jpg");
+  background-size: cover;
+  background-position: center 80%;
+  height:836px;
+}
+
+.top_font{
+  color:white;
+}
+
+.btn-gradient-radius {
+  display: inline-block;
+  margin-top: 100px;
+  padding: 8px 120px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  transition: .4s;
+  font-size:20px;
+}
+
+.btn-gradient-radius:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
+@media (min-width: 100px) {
+
+  html .display-4, html h1 {
+    font-size: 2.0rem;
+  }
+
+}
+
+@media (min-width: 500px) {
+
+  html .display-4 {
+    font-size: 3rem;
+  }
+
+}
+
+@media (min-width: 785px) {
+
+  html {
+    font-size: 18px
+  }
+
+}
