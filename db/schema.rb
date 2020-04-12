@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_122241) do
+ActiveRecord::Schema.define(version: 2020_04_02_113700) do
 
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.boolean "mail_flag", default: false, null: false
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2020_04_12_122241) do
     t.boolean "comment_flag", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

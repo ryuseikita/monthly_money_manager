@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
     if user.present?
       if user && user.authenticate(params[:session][:password])
         session[:user_id] = user.id
-        remember user
         flash.now[:danger] = 'ログインに成功しました'
         redirect_to permanths_path
       else
