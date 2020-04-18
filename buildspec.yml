@@ -1,9 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - aws s3 cp s3://m3-production-env/web/.env .
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
