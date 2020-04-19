@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /var/www/monthly_money_manager/
-docker-compose -f docker-compose-pro.yml down
+APP_DIR="/var/www/monthly_money_manager"
+docker-compose -f "${APP_DIR}"/docker-compose-pro.yml down
