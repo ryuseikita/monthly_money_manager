@@ -8,9 +8,8 @@ RUN apt-get update -qq && \
 RUN gem install bundler
 RUN mkdir -p /app
 WORKDIR /app
-ADD Gemfile /app/Gemfile
-ADD Gemfile.lock /app/Gemfile.lock
-RUN bundle install -j4
 ADD . /app
+RUN bundle config --local build.sassc --disable-march-tune-native
+RUN bundle install -j4
 
 EXPOSE 3000
