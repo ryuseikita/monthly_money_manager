@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Review, type: :model do
   let(:user) { FactoryBot.create(:user01) }
-  let(:service) {FactoryBot.create(:service01)}
+  let(:service) {FactoryBot.create(:service01,user_id: user.id)}
   let!(:review) { FactoryBot.build(:user01_coment ,user_id: user.id, service_id: service.id) }
   describe "レビューのコメントの" do
     context "投稿時に" do

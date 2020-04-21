@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe '加入サービス登録機能', type: :system , js: true do
-  let!(:user) { FactoryBot.create(:user01) }
-  let!(:service01){ FactoryBot.create(:service01)}
-  let!(:service02){ FactoryBot.create(:service02)}
+  let!(:user) { FactoryBot.create(:user01, id: 1) }
+  let!(:service01){ FactoryBot.create(:service01,user_id: user.id)}
+  let!(:service02){ FactoryBot.create(:service02,user_id: user.id)}
   before do
     visit new_session_path
     fill_in 'session[email]' ,with: 'user01@example.com'
