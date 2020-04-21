@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Permanth, type: :model do
   let(:user) { FactoryBot.create(:user01) }
-  let(:service) {FactoryBot.create(:service01)}
+  let(:service) {FactoryBot.create(:service01, user_id: user.id)}
   let!(:permanth) { FactoryBot.build(:test_permanth01 ,user_id: user.id, service_id: service.id) }
   describe "月額会費の" do
     context "登録時に" do

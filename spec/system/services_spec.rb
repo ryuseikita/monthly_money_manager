@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe '既存サービス機能', type: :system , js: true do
-  let!(:user) { FactoryBot.create(:admin_user) }
-  let!(:music){ FactoryBot.create(:service01)}
-  let!(:Hulu){ FactoryBot.create(:service02)}
+  let!(:user) { FactoryBot.create(:admin_user,id: 1 )}
+  let!(:music){ FactoryBot.create(:service01,user_id: user.id)}
+  let!(:Hulu){ FactoryBot.create(:service02,user_id: user.id)}
   before do
     visit new_session_path
     fill_in 'session[email]' ,with: 'admin_user@example.com'
