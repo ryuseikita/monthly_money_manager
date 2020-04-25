@@ -43,7 +43,7 @@ html, body {
   background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), image-url("top.jpg");
   background-size: cover;
   background-position: center 80%;
-  height:836px;
+  height:35rem;
 }
 
 .top_font{
@@ -52,7 +52,6 @@ html, body {
 
 .btn-gradient-radius {
   display: inline-block;
-  margin-top: 100px;
   padding: 8px 120px;
   border-radius: 25px;
   text-decoration: none;
@@ -62,11 +61,51 @@ html, body {
   font-size:20px;
 }
 
+.btn_position {
+  margin-top: 100px;
+}
+
 .btn-gradient-radius:hover {
   background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
 
+.box{
+  padding: 0;
+  margin: 1rem 0;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+}
+.box p {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.card-box {
+  margin: 1em 0;
+  background: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+.card-box .box-title {
+  font-size: 1.2em;
+  background: #F5B428;
+  padding: 4px;
+  text-align: center;
+  color: #FFF;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+.card-box p {
+  padding: 15px 20px;
+  margin: 0;
+}
+
+
 @media (min-width: 100px) {
+
+  html{
+    font-size: 15px;
+  }
 
   html .display-4, html h1 {
     font-size: 2.0rem;

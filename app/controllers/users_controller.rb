@@ -10,14 +10,30 @@ class UsersController < ApplicationController
   end
 
   def create
+    if "テストユーザでログインする。" == params[:commit]
+      list = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map { |i| i.to_a }.flatten
+      random = (0...4).map { list[rand(list.length)] }.join
+      @user = User.new(
+                   name: "User:" + random,
+                   email: "User:" + random + "example.com",
+                   password: "password",
+                   password_confirmation: "password"
+                  )
+      @user.build_delivery
+      session[:user_id] = @user.id
+      remember @user
+      redirect_to permanths_path
+    else
       @user = User.new(user_params)
       @user.build_delivery
       if @user.save
           session[:user_id] = @user.id
+          remember @user
           redirect_to permanths_path
       else
           render 'new'
       end
+    end
   end
 
   def edit

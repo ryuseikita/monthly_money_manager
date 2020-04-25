@@ -35,6 +35,9 @@
             </div>
             <%= f.submit "新しいアカウントの作成" ,class:'btn btn-primary'%>
           <% end %>
+            <%= form_with(model: @user, local: true)  do |f| %>
+                <%= f.submit "テストユーザでログインする。" ,class:'btn btn-success mt-2'%>
+            <% end %>
         </div>
     </div>
     <div class="col"></div>
