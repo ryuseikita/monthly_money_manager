@@ -103,6 +103,10 @@ html, body {
 
 @media (min-width: 100px) {
 
+  html{
+    font-size: 15px;
+  }
+
   html .display-4, html h1 {
     font-size: 2.0rem;
   }
