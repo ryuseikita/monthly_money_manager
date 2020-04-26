@@ -17,7 +17,7 @@ namespace :notification do
   task cancellation_service: :environment do
     @users = User.where.not("email LIKE '%example%'" )
     @users.each do |user|
-      @permanth = user.permanths.where(cancellation: Date.today+1 )
+      @permanth = user.permanths.where(cancellation: Date.tomorrow.in_time_zone )
       @permanth.each do |permanth|
         CancellationMailer.cancellation_email(permanth).deliver
       end
