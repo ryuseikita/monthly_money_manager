@@ -13,4 +13,8 @@ ADD . /app
 RUN bundle config --local build.sassc --disable-march-tune-native
 RUN bundle install -j4
 
+#cron設定
+RUN /bin/cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+RUN bundle exec whenever --update-crontab
+
 EXPOSE 3000
