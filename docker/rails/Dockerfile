@@ -4,7 +4,8 @@ RUN apt-get update -qq && \
                        build-essential \
                        libpq-dev \
                        nodejs \
-                       default-mysql-client
+                       default-mysql-client \
+                       cron
 RUN gem install bundler
 RUN mkdir -p /app
 WORKDIR /app
