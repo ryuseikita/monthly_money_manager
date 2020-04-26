@@ -2,7 +2,7 @@ namespace :notification do
   desc "月額金額のメール通知"
   task permanth_money: :environment do
     ### テストユーザには通知しない。
-    @users = User.where.not("email LIKE '%example%'" )
+    @users = User.left_joins(:delivery).where(deliveries:{mail_flag:0}).where.not("email LIKE '%example%'" )
     @users.each do |user|
       permanths = user.permanths
       @sum=0
