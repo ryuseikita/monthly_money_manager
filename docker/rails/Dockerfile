@@ -17,4 +17,6 @@ RUN bundle install -j4
 RUN /bin/cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 RUN bundle exec whenever --update-crontab
 
+CMD ["cron", "-f"]
+
 EXPOSE 3000
