@@ -1,5 +1,7 @@
+ENV.each { |k, v| env(k, v) } 
+
 set :output, 'log/crontab.log'
-ENV['RAILS_ENV'] ||= 'development'
+ENV['RAILS_ENV'] ||= 'production'
 set :environment, ENV['RAILS_ENV']
 
 # crontab型の設定「分」「時」「日」「月」「曜日」

@@ -4,12 +4,19 @@ RUN apt-get update -qq && \
                        build-essential \
                        libpq-dev \
                        nodejs \
-                       default-mysql-client
+                       default-mysql-client \
+                       cron
 RUN gem install bundler
 RUN mkdir -p /app
 WORKDIR /app
 ADD . /app
 RUN bundle config --local build.sassc --disable-march-tune-native
 RUN bundle install -j4
+
+#cron設定
+RUN /bin/cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+RUN bundle exec whenever --update-crontab
+
+CMD ["cron", "-f"]
 
 EXPOSE 3000
