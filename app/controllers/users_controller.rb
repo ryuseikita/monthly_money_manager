@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user,only:[:edit,:update]
+  before_action :set_user,only:[:edit,:update,:destroy]
 
   def new
     if logged_in?
@@ -50,6 +50,12 @@ class UsersController < ApplicationController
         format.js { render 'edit' }
       end
     end
+  end
+
+  def destroy
+    binding.pry
+    @user.destroy
+    redirect_to new_session_path,notice:"アカウントを削除しました！"
   end
 
   private

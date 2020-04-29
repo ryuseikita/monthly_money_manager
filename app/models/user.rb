@@ -1,10 +1,10 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   has_secure_password
-  has_many :permanths
-  has_many :reviews
-  has_one :delivery
-  has_many :services
+  has_many :permanths, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_one :delivery, dependent: :destroy
+  has_many :services, dependent: :destroy
   mount_uploader :icon, IconUploader
 
   before_validation { email.downcase! }
