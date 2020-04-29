@@ -53,7 +53,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @user.destroy
     redirect_to new_session_path,notice:"アカウントを削除しました！"
   end
