@@ -33,6 +33,11 @@
           </ul>
 
           <ul class="navbar-nav">
+            <% if ENV['DB_ENV'] == "monthly_money_manager_develop" %>
+              <li class="nav-item">
+                    <span class= "nav-link">Develop環境</span>
+              </li>
+            <% end %>
             <li class="nav-item">
               <% if logged_in? %>
                 <%= link_to @current_user.name, permanths_path ,class: "nav-link"%>
