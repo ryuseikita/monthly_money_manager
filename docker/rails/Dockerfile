@@ -15,5 +15,6 @@ RUN bundle install -j4
 
 #cron設定
 RUN /bin/cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+RUN bundle exec "rails assets:precompile RAILS_ENV=production"
 
 EXPOSE 3000
