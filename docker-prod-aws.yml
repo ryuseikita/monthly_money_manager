@@ -2,7 +2,7 @@ version: '2'
 services:
   app:
     image: ${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/monthly_money_manager_app:latest
-    command: bundle exec "rails assets:precompile RAILS_ENV=production  && unicorn -p 3000 -c /app/config/unicorn.rb"
+    command: bundle exec "unicorn -p 3000 -c /app/config/unicorn.rb"
     ports:
       - '3000:3000'
     volumes:
@@ -10,7 +10,8 @@ services:
       - /var/log/monthly_money_manager:/app/log
       - /app/public
     environment:
-      RAILS_ENV: production
+      - RAILS_ENV=production
+      - RAILS_LOG_TO_STDOUT=true
   nginx:
     image: ${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/monthly_money_manager_nginx:latest
     ports:
